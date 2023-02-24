@@ -1,2 +1,17 @@
-p {color: blue}
-p:first-letter {font-size: xx-large}
+/*
+	Refer back to:
+	import.html
+	import.css
+	headings.css
+
+1. Create and save the style sheet as "paragraphs.css" alongside the HTML
+file then to specify the appearance of paragraphs.
+*/
+
+p {
+	color: blue
+}
+
+p:first-letter {
+	font-size: xx-large
+}
