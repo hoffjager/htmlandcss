@@ -311,50 +311,41 @@ press Ctrl + Enter to see the Code Snippet list.
   Web.
 
 Chapter 2:
-• 	Bestowing a title
-• 	Specifying a character set
-• 	Refreshing the page
-• 	Describing the document
-• 	Incorporating scripts
-• 	Incorporating style sheets
-• 	Linking more resources
-• 	Chapter 2 Summary
+1. 	Bestowing a title
+2. 	Specifying a character set
+3. 	Refreshing the page
+4. 	Describing the document
+5. 	Incorporating scripts
+6. 	Incorporating style sheets
+7.	Linking more resources
+8. 	Summary
 
-	Bestowing a title
-The specifications require every HTML5 document to have a title, but its
-importance is often overlooked. The document title should be carefully considered,
-however, as it is used extensively:
+1.	Bestowing a title
+The specifications require every HTML5 document to have a title, but its importance is often overlooked. The
+document title should be carefully considered, however, as it is used extensively:
 • Bookmarks – save the document title to link back to its URL
 • Title Bar – a web browser window may display the title
 • Navigation Tab – a web browser tab may display the title
 • History – saves the document title to link back to its URL
-• Search Engines – read the document title and typically display it in search
-results to link back to its URL
-You can find a chart of all character entities at
-dev.w3.org/html5/htmlauthor/charref
-The specifications do not define a naming scheme for document titles, but do
-encourage authors to consider accessibility issues in all aspects of their
-web page designs.
-Document titles should ideally be short and meaningful – each tab on a modern
-tabbed browser may display only 10 characters.
-Document titles throughout a website should follow a consistent naming convention
-and capitalize all major words. One popular naming convention provides a personal
-or company name and brief page description separated by a hyphen. For example,
-“Amazon - HTML5 in easy steps”. An alternative places the description first, so it
-remains visible when the title is truncated. For example, “HTML5 in easy steps -
-Amazon”.
-Document titles, and document content, may contain special characters that are
-known in HTML5 as “entities”. Each entity reference begins with an ampersand and
-ends with a semi-colon. For example, the entity &lt; (less than) creates a “<”
-character, and the entity &gt; (greater than) creates a “>” character. These are
-often needed to avoid confusion with the angled brackets that surround each HTML
-tag. Other frequently used entities include &nbsp; (a single non-breaking space),
-&copy; (©), &reg; (®), and &trade; (™).
-These are best avoided in document titles, however, as the vocal narrator used by
-visually impaired viewers may read each entity character as a word.
-Title text that is not visible on the tab will still be read by a narrator. Press
-WinKey + Enter to launch the narrator on Windows 10, then click the tab to hear
-the title.
+• Search Engines – read the document title and typically display it in search results to link back to its URL
+You can find a chart of all character entities at: http://www.dev.w3.org/html5/htmlauthor/charref
+The specifications do not define a naming scheme for document titles, but do encourage authors to consider
+accessibility issues in all aspects of their web page designs.
+Document titles should ideally be short and meaningful – each tab on a modern tabbed browser may display only 10
+characters.
+Document titles throughout a website should follow a consistent naming convention and capitalize all major words.
+One popular naming convention provides a personal or company name and brief page description separated by a hyphen.
+For example, “Amazon - HTML5 in easy steps”. An alternative places the description first, so it remains visible when
+the title is truncated. For example, “HTML5 in easy steps - Amazon”.
+Document titles, and document content, may contain special characters that are known in HTML5 as “entities”. Each
+entity reference begins with an ampersand and ends with a semi-colon. For example, the entity &lt; (less than)
+creates a “<” character, and the entity &gt; (greater than) creates a “>” character. These are often needed to avoid
+confusion with the angled brackets that surround each HTML tag. Other frequently used entities include &nbsp;
+(a single non-breaking space), &copy; (©), &reg; (®), and &trade; (™).
+These are best avoided in document titles, however, as the vocal narrator used by visually impaired viewers may read
+each entity character as a word.
+Title text that is not visible on the tab will still be read by a narrator. Press WinKey + Enter to launch the
+narrator on Windows 10, then click the tab to hear the title.
 
 TOPIC1title.html
 1. Start a new HTML5 with a document type declaration:
@@ -368,64 +359,57 @@ TOPIC1title.html
 	<!-- Content to appear in the browser to be added here -->
 </body>
 </html>
-3. Within the head section, insert a meta element specifying the character set
-and an empty title element:
+3. Within the head section, insert a meta element specifying the character set and an empty title element:
 <meta charset=“UTF-8”>
 <title> </title>
-The character set can be defined in uppercase, as shown here, or in lowercase as
-“utf-8”.
-4. Within the title element, insert a title including entities
+The character set can be defined in uppercase, as shown here, or in lowercase as “utf-8”.
+4. Within the title element, insert a title including entities:
 quot; HTML5 in easysteps &quot;
-5. Save the document then open it in your web browser
-6. Start a vocal narrator to hear that the title may be read out as “Less-than-
-HTML5-in-easy-steps-greater-than”
-The vocal narrator on Windows 10 ignores angled brackets in a title, but they are
-read literally by the narrator in earlier versions of Windows.
+5. Save the document then open it in your web browser.
+6. Start a vocal narrator to hear that the title may be read out as “Less-than-HTML5-in-easy-steps-greater-than”
+The vocal narrator on Windows 10 ignores angled brackets in a title, but they are read literally by the narrator in
+earlier versions of Windows.
 7. Edit the document title to make it more user-friendly:
 &lt;HTML5 in easy steps&gt;
-8. Save the document once more, then open it in your web browser to hear the
-narrator now read the document title as “HTML5 in easy steps”
+8. Save the document once more, then open it in your web browser to hear the narrator now read the document title
+as “HTML5 in easy steps”
 
-	Specifying a character set
-The examples in this book are each files saved with Unicode endings using the
-UTF-8 character-set. This character-set supports all characters in both Western
-and English languages, which allows the HTML document to contain characters from
-any language. Further character sets exist that also support all languages, while
-others exclusively support Western languages. The five most popular character-sets
-are listed below:
-UTF-8: Multi-lingual Universal Transformation Format
-BIG5: Multi-lingual traditional Chinese characters
-SHIFT_JIS: Multi-lingual traditional Japanese characters
-US-ASCII: US ASCII standard Western alphabet characters
-ISO-8859-1: ISO standard Western alphabet characters
-Character-set names are not case-sensitive – so “BIG5”, “Big5”, and “big5” are
-equivalent.
-Although UTF-8 supports Chinese and Japanese characters, they may appear as a
-simplified equivalent of those in the more specialized character sets, which
-create traditional characters.
+2.	Specifying a character set
+The examples in this book are each files saved with Unicode endings using the UTF-8 character-set. This
+character-set supports all characters in both Western and English languages, which allows the HTML document to
+contain characters from any language. Further character sets exist that also support all languages, while others
+exclusively support Western languages. The five most popular character-sets are listed below:
+• UTF-8: Multi-lingual Universal Transformation Format
+• BIG5: Multi-lingual traditional Chinese characters
+• SHIFT_JIS: Multi-lingual traditional Japanese characters
+• US-ASCII: US ASCII standard Western alphabet characters
+• ISO-8859-1: ISO standard Western alphabet characters
+Character-set names are not case-sensitive – so “BIG5”, “Big5”, and “big5” are equivalent.
+Although UTF-8 supports Chinese and Japanese characters, they may appear as a simplified equivalent of those in the
+more specialized character sets, which create traditional characters.
 
 TOPIC1big5.html
-1. Launch a text editor with Chinese language support and start with the HTML5
-document type declaration
+1. Launch a text editor with Chinese language support and start with the HTML5 document type declaration:
 <!DOCTYPE HTML>
-2. Add a root element containing head and body sections
+2. Add a root element containing head and body sections:
 <html lang=“en”>
-<head> <!-- Information goes here --> </head>
-<body> <!-- Content goes here --> </body>
+<head>
+	<!-- Information goes here -->
+</head>
+<body>
+	<!-- Content goes here -->
+</body>
 </html>
-3. Within the head section, insert a meta element to specify the character set
-as BIG5, and add a document title:
+3. Within the head section, insert a meta element to specify the character set as BIG5, and add a document title:
 	<meta charset = “BIG5”>
 	<title> BIG5 Encoding </title>
 4. In the body section, insert an English heading and its Chinese equivalent:
 <h1> Fantastic Web Page </h1>
 <h1> 很棒的網頁 </h1>
-5. Now, save the document as “TOPIC1big5.html” – being sure to set the encoding
-to BIG5.
+5. Now, save the document as “TOPIC1big5.html” – being sure to set the encoding to BIG5.
 
 TOPIC1utf-8.html
-6. Next, recreate the HTML5 document, but this time specify the character set as
-UTF-8:
+6. Next, recreate the HTML5 document, but this time specify the character set as UTF-8:
 <!DOCTYPE HTML>
 <html lang=“en”>
 <head>
@@ -437,38 +421,32 @@ UTF-8:
 	<h1> 很棒的網頁 </h1>
 </body>
 </html>
-7. Save the second document as “TOPIC1utf-8.html”– being sure to set the encoding to
-UTF-8
-8. Finally, open both documents in your web browser and compare the appearance
-of the characters created by the two different character-set encodings
-US ASCII was formerly the most commonly used encoding on the web, but it has
+7. Save the second document as “TOPIC1utf-8.html”– being sure to set the encoding to UTF-8
+8. Finally, open both documents in your web browser and compare the appearance of the characters created by the two
+different character-set encodings. US ASCII was formerly the most commonly used encoding on the web, but it has
 now been surpassed by UTF-8 due to its wider support.
 	
-	Refreshing the page
-Meta information is simply data that describes other data. In the context of HTML,
-document meta data describes the document itself – rather than the document’s
-contents.
-HTML meta data is defined in the head section of the HTML document using the
-<meta> tag. Previous examples have used this tag to specify the document’s
-character-set – as one piece of information describing that document.
+3.	Refreshing the page
+Meta information is simply data that describes other data. In the context of HTML, document meta data describes the
+document itself – rather than the document’s contents.
+HTML meta data is defined in the head section of the HTML document using the <meta> tag. Previous examples have used
+this tag to specify the document’s character-set – as one piece of information describing that document.
 Further <meta> tags can be added to describe other aspects of the document.
-The <meta> tag is an “empty” tag that needs no matching closing tag to create an
-HTML element. It is only used to specify information with its tag attributes.
-For example, its http-equiv attribute can represent a document HTTP header
-property and its content attribute specify that property’s value.
-The W3C discourages the use of meta refresh as it can disorient users – but the
-meta refresh uses described here are considered legitimate.
-Assigning the HTTP “refresh” property to a <meta> tag’s http-equiv attribute can
-be used to reload the page after a number of seconds specified by its content
-attribute. For example, to reload the page after five seconds, like this:
+The <meta> tag is an “empty” tag that needs no matching closing tag to create an HTML element.
+It is only used to specify information with its tag attributes.
+For example, its http-equiv attribute can represent a document HTTP header property and its content attribute
+specify that property’s value.
+The W3C discourages the use of meta refresh as it can disorient users – but the meta refresh uses described here are
+considered legitimate.
+Assigning the HTTP “refresh” property to a <meta> tag’s http-equiv attribute can be used to reload the page after a
+number of seconds specified by its content attribute. For example, to reload the page after five seconds, like this:
 <meta http-equiv = “refresh” content = “5”>
-This technique is often used on websites to dynamically update news or status
-items, as it does not depend on JavaScript support.
-Another popular use redirects the browser to a new web page after a specified
-number of seconds, like this:
-<meta http-equiv = “refresh” content= “5; url = ’new-page.html’ ”>
-In this case, the <meta> tag’s content attribute specifies both the number of
-seconds to delay and the new URL to load.
+This technique is often used on websites to dynamically update news or status items, as it does not depend on
+JavaScript support.
+Another popular use redirects the browser to a new web page after a specified number of seconds, like this:
+<meta http-equiv = “refresh” content= “5; url = ’TOPIC1new-page.html’ ”>
+In this case, the <meta> tag’s content attribute specifies both the number of seconds to delay and the new URL to
+load.
 
 TOPIC1refresh.html
 1. Start with the HTML5 document type declaration:
@@ -482,15 +460,13 @@ TOPIC1refresh.html
 	<h1> Moving in 5 Seconds... </h1>
 </body>
 </html>
-3. Within the head section, insert meta elements to specify the encoding
-character-set and refresh information:
+3. Within the head section, insert meta elements to specify the encoding character-set and refresh information:
 <meta charset = “UTF-8”>
 <meta http-equiv = “refresh”
 	content = “5 ; url = ’TOPIC1new-page.html’ ”>
 
 TOPIC1new-page.html
-4. Save the document as “TOPIC1refresh.html”, then create the HTML document to which
-the browser will redirect:
+4. Save the document as “TOPIC1refresh.html”, then create the HTML document to which the browser will redirect:
 <!DOCTYPE HTML>
 <html lang = “en”>
 <head>
@@ -501,43 +477,34 @@ the browser will redirect:
 	<h1> Moved Here After 5 Seconds! </h1>
 </body>
 </html>
-5. Save the second document as “TOPIC1new-page.html”, in the same directory as
-“TOPIC1refresh.html”, then open the first document in your browser to see the
-browser get redirected after a five second delay.
-Notice that the content attribute value entirely surrounds both the delay and URL
-with double quote marks, but the URL is just surrounded by single quote marks.
+5. Save the second document as “TOPIC1new-page.html”, in the same directory as “TOPIC1refresh.html”, then open the
+first document in your browser to see the browser get redirected after a five second delay.
+Notice that the content attribute value entirely surrounds both the delay and URL with double quote marks, but the
+URL is just surrounded by single quote marks.
 
-	Describing the document
-In addition to specifying the document’s character-set and expiry date, <meta>
-tags can be used to provide descriptive information that may be useful to search
-engines. This offers no guarantee of high ranking, however, as search engines also
-use other page information for that purpose – especially the document title.
-Nevertheless, it is helpful to provide a description and a list of keywords
-relevant to the contents of that page so that search engine “spiders” might
-usefully add the page to their index.
-All search engine spiders find pages to add to their index – even if the page has
-never been submitted to them.
-Descriptive <meta> tags always have a name attribute, to specify a page feature,
-and a content attribute to specify that feature’s value. For example, the
-“description” name allows you to specify text content describing the page.
-This should be short, succinct sentences that might appear in a search engine’s
-results page. Any description longer than around 200 characters may get truncated.
-Similarly, the “keywords” name allows you to specify text content in the format
-of a comma-separated list of relevant keywords. These may be used by search
-engines to influence their results. For example, a search for “italian ceramics”
-could return all web pages with “italian” and “ceramics” in their keywords list.
-Promotion of the web page by keywords is best achieved by following some simple
-guidelines:
+4.	Describing the document
+In addition to specifying the document’s character-set and expiry date, <meta> tags can be used to provide
+descriptive information that may be useful to search engines. This offers no guarantee of high ranking, however, as
+search engines also use other page information for that purpose – especially the document title.
+Nevertheless, it is helpful to provide a description and a list of keywords relevant to the contents of that page so
+that search engine “spiders” might usefully add the page to their index.
+All search engine spiders find pages to add to their index – even if the page has never been submitted to them.
+Descriptive <meta> tags always have a name attribute, to specify a page feature, and a content attribute to specify
+that feature’s value. For example, the “description” name allows you to specify text content describing the page.
+This should be short, succinct sentences that might appear in a search engine’s results page. Any description longer
+than around 200 characters may get truncated. Similarly, the “keywords” name allows you to specify text content in
+the format of a comma-separated list of relevant keywords. These may be used by search engines to influence their
+results. For example, a search for “italian ceramics” could return all web pages with “italian” and “ceramics” in
+their keywords list.
+Promotion of the web page by keywords is best achieved by following some simple guidelines:
 • Use only lowercase characters
 • Keep all keywords on a single line
 • Never repeat a keyword in a list
 • Limit the keywords list to 1,000 characters or less
-• Try to use the plural form for keywords – to match searches made with both the
-single and plural forms of that word
-To specify that a web page should not be indexed by search engines, the “robots”
-name should have a content value of “noindex”. Conversely, this may be set to
-“all” to explicitly allow indexing, but as that is the default state it’s not
-really necessary.
+• Try to use the plural form for keywords – to match searches made with both the single and plural forms of that word
+To specify that a web page should not be indexed by search engines, the “robots” name should have a content value of
+“noindex”. Conversely, this may be set to “all” to explicitly allow indexing, but as that is the default state it’s
+not really necessary.
 Always include the three most important keywords in the description.
 
 TOPIC1keywords.html
@@ -552,8 +519,7 @@ TOPIC1keywords.html
 	<h1> Beautiful Tuscan Ceramics </h1>
 </body>
 </html>
-3. Within the head section, insert meta elements to specify the encoding
-character-set, description, and keywords:
+3. Within the head section, insert meta elements to specify the encoding character-set, description, and keywords:
 <meta charset = “UTF-8”>
 <meta name = “description”
 	content= “Shop for beautiful Italian Ceramics, Tuscan Majolica,
@@ -561,22 +527,17 @@ character-set, description, and keywords:
 <meta name = “keywords”
 	content= “tuscan, italian, ceramics, home
 		 decor, majolica, dinnerwares, vases, plates, bowls”>
-4. Save the document, then open it with Firefox and use the Page Info dialog on
-the context menu to see the meta data.
-Notice that the first four meta keywords in this example also appear in the meta
-description.
-There are a number of free meta tag generators available online – enter
-“free meta tag generator” into a search engine.
+4. Save the document, then open it with Firefox and use the Page Info dialog on the context menu to see the meta data.
+Notice that the first four meta keywords in this example also appear in the meta description.
+There are a number of free meta tag generators available online – enter “free meta tag generator” into a search engine.
 
-	Incorporating scripts
-Scripts can be incorporated within HTML documents to interact with the user and
-to provide dynamic effects. This ability has become increasingly important with
-the development of Web 2.0 pages in which sections of the page can be dynamically
-updated. Previously, the browser would typically request an entire new page from
-the web server, which was less efficient and more cumbersome, so Web 2.0 is a
-great improvement.
-Scripts enclosed by <script> </script> tags can be added within the head section
-of an HTML document but, in line with the aim of HTML5 to separate content from
+5.	Incorporating scripts
+Scripts can be incorporated within HTML documents to interact with the user and to provide dynamic effects. This
+ability has become increasingly important with the development of Web 2.0 pages in which sections of the page can be
+dynamically updated. Previously, the browser would typically request an entire new page from the web server, which
+was less efficient and more cumbersome, so Web 2.0 is a great improvement.
+Scripts enclosed by <script> </script> tags can be added within the head section of an HTML document but, in line
+with the aim of HTML5 to separate content from
 presentation, are best contained in a separate file. The <script> tag
 automatically assumes a type attribute value of “text/javascript”, as scripts are
 expected to use the JavaScript language by default. This means that the type
