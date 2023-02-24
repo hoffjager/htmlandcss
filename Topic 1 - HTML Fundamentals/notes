@@ -149,7 +149,7 @@ Comments can be added at any point within both the head and body sections betwee
 Anything that appears between the comment tags is ignored by the browser:
 <!-- This text won't appear on the web page -->
 
-	Fundamental structure
+3.v		Fundamental structure
 So, the markup tags that create the fundamental structure of every HTML5 document look like this:
 <!DOCTYPE HTML>
 <html>
@@ -184,45 +184,8 @@ Unicode Transformation Format for which the code is UTF-8, so the complete eleme
 Finally, the document’s title is defined by text between a pair of <title> </title> tags placed in the document’s
 head section.
 
-Follow these steps to create a valid “barebones” HTML5 document:
-TOPIC1helloworld.html
-
-1. Launch your favorite plain text editor, then start a new document with the HTML5 document type declaration:
-<!DOCTYPE HTML>
-HTML documents should not be created in word processors, such as MS Word, as they include additional information in
-their file formats.
-2. Below the document type declaration, add a root element that defines the document’s primary language as English:
-<html lang = ”en”>
-	<!-- Head and Body sections to be added here -->
-</html>
-3. Within the root element, insert a document head section:
-<head>
-	<!-- Descriptive information to be added here -->
-</head>
-4. Within the head section, insert an element defining the document’s encoding character set:
-<meta charset = “UTF-8”>
-5. Next, within the head section, insert an element defining the document’s title:
-<title> Getting Started </title>
-6. After the head section, insert a document body section:
-<body>
-	<!-- Actual document content to be added here -->
-</body>
-7. Within the body section, insert a size-one large heading:
-<h1> Hello World! </h1>
-8. Save the document as “TOPIC1helloworld.html”, setting the encoding to the popular “UTF-8” format.
-9. Now, open the HTML5 document in a modern web browser to see the title displayed on the title bar or tab, and the
-document content displayed as a large heading.
-
-<!DOCTYPE HTML>
-<html lang = "en">
-	<head>
-		<meta charset = "UTF-8">
-		<title> Getting Started </title>
-	</head>	
-	<body>
-		<h1> Hello World! </h1>
-	</body>		
-</html>
+Refer to:
+hello.html
 
 The quotation marks around an attribute value are usually optional, but are required for multiple values. For
 consistency, attribute values in the examples throughout this book are all surrounded by quotation marks.
@@ -347,32 +310,8 @@ each entity character as a word.
 Title text that is not visible on the tab will still be read by a narrator. Press WinKey + Enter to launch the
 narrator on Windows 10, then click the tab to hear the title.
 
-TOPIC1title.html
-1. Start a new HTML5 with a document type declaration:
-<!DOCTYPE HTML>
-2. Add a root element containing head and body sections:
-<html lang=“en”>
-<head>
-	<!-- Data describing the document to be added here -->
-</head>
-<body>
-	<!-- Content to appear in the browser to be added here -->
-</body>
-</html>
-3. Within the head section, insert a meta element specifying the character set and an empty title element:
-<meta charset=“UTF-8”>
-<title> </title>
-The character set can be defined in uppercase, as shown here, or in lowercase as “utf-8”.
-4. Within the title element, insert a title including entities:
-quot; HTML5 in easysteps &quot;
-5. Save the document then open it in your web browser.
-6. Start a vocal narrator to hear that the title may be read out as “Less-than-HTML5-in-easy-steps-greater-than”
-The vocal narrator on Windows 10 ignores angled brackets in a title, but they are read literally by the narrator in
-earlier versions of Windows.
-7. Edit the document title to make it more user-friendly:
-&lt;HTML5 in easy steps&gt;
-8. Save the document once more, then open it in your web browser to hear the narrator now read the document title
-as “HTML5 in easy steps”
+Refer to:
+title.html
 
 2.	Specifying a character set
 The examples in this book are each files saved with Unicode endings using the UTF-8 character-set. This
@@ -388,43 +327,10 @@ Character-set names are not case-sensitive – so “BIG5”, “Big5”, and �
 Although UTF-8 supports Chinese and Japanese characters, they may appear as a simplified equivalent of those in the
 more specialized character sets, which create traditional characters.
 
-TOPIC1big5.html
-1. Launch a text editor with Chinese language support and start with the HTML5 document type declaration:
-<!DOCTYPE HTML>
-2. Add a root element containing head and body sections:
-<html lang=“en”>
-<head>
-	<!-- Information goes here -->
-</head>
-<body>
-	<!-- Content goes here -->
-</body>
-</html>
-3. Within the head section, insert a meta element to specify the character set as BIG5, and add a document title:
-	<meta charset = “BIG5”>
-	<title> BIG5 Encoding </title>
-4. In the body section, insert an English heading and its Chinese equivalent:
-<h1> Fantastic Web Page </h1>
-<h1> 很棒的網頁 </h1>
-5. Now, save the document as “TOPIC1big5.html” – being sure to set the encoding to BIG5.
-
-TOPIC1utf-8.html
-6. Next, recreate the HTML5 document, but this time specify the character set as UTF-8:
-<!DOCTYPE HTML>
-<html lang=“en”>
-<head>
-	<meta charset=“UTF-8”>
-	<title>UTF-8 Encoding</title>
-</head>
-<body>
-	<h1>Fantastic Web Page</h1>
-	<h1> 很棒的網頁 </h1>
-</body>
-</html>
-7. Save the second document as “TOPIC1utf-8.html”– being sure to set the encoding to UTF-8
-8. Finally, open both documents in your web browser and compare the appearance of the characters created by the two
-different character-set encodings. US ASCII was formerly the most commonly used encoding on the web, but it has
-now been surpassed by UTF-8 due to its wider support.
+Refer to:
+big5.html
+&
+utf-8.html
 	
 3.	Refreshing the page
 Meta information is simply data that describes other data. In the context of HTML, document meta data describes the
@@ -448,39 +354,10 @@ Another popular use redirects the browser to a new web page after a specified nu
 In this case, the <meta> tag’s content attribute specifies both the number of seconds to delay and the new URL to
 load.
 
-TOPIC1refresh.html
-1. Start with the HTML5 document type declaration:
-<!DOCTYPE HTML>
-2. Add a root element containing head and body sections:
-<html lang = "en">
-<head>
-	<title> Refresh Example </title>
-</head>
-<body>
-	<h1> Moving in 5 Seconds... </h1>
-</body>
-</html>
-3. Within the head section, insert meta elements to specify the encoding character-set and refresh information:
-<meta charset = “UTF-8”>
-<meta http-equiv = “refresh”
-	content = “5 ; url = ’TOPIC1new-page.html’ ”>
-
-TOPIC1new-page.html
-4. Save the document as “TOPIC1refresh.html”, then create the HTML document to which the browser will redirect:
-<!DOCTYPE HTML>
-<html lang = “en”>
-<head>
-	<meta charset = ”UTF-8”>
-	<title> Refresh Example - New </title>
-</head>
-<body>
-	<h1> Moved Here After 5 Seconds! </h1>
-</body>
-</html>
-5. Save the second document as “TOPIC1new-page.html”, in the same directory as “TOPIC1refresh.html”, then open the
-first document in your browser to see the browser get redirected after a five second delay.
-Notice that the content attribute value entirely surrounds both the delay and URL with double quote marks, but the
-URL is just surrounded by single quote marks.
+Refer to:
+refresh.html
+&
+new-page.html
 
 4.	Describing the document
 In addition to specifying the document’s character-set and expiry date, <meta> tags can be used to provide
@@ -507,29 +384,8 @@ To specify that a web page should not be indexed by search engines, the “robot
 not really necessary.
 Always include the three most important keywords in the description.
 
-TOPIC1keywords.html
-1. Start with the HTML5 document type declaration:
-<!DOCTYPE HTML>
-2. Add a root element containing head and body sections:
-<html lang=“en”>
-<head>
-	<title> Tuscan Home Decor [Italian Ceramics] </title>
-</head>
-<body>
-	<h1> Beautiful Tuscan Ceramics </h1>
-</body>
-</html>
-3. Within the head section, insert meta elements to specify the encoding character-set, description, and keywords:
-<meta charset = “UTF-8”>
-<meta name = “description”
-	content= “Shop for beautiful Italian Ceramics, Tuscan Majolica,
-		 Home Decor, and more.”>
-<meta name = “keywords”
-	content= “tuscan, italian, ceramics, home
-		 decor, majolica, dinnerwares, vases, plates, bowls”>
-4. Save the document, then open it with Firefox and use the Page Info dialog on the context menu to see the meta data.
-Notice that the first four meta keywords in this example also appear in the meta description.
-There are a number of free meta tag generators available online – enter “free meta tag generator” into a search engine.
+Refer to:
+keywords.html
 
 5.	Incorporating scripts
 Scripts can be incorporated within HTML documents to interact with the user and to provide dynamic effects. This
@@ -551,48 +407,12 @@ between <noscript></noscript> tags, which will only be displayed when script
 functionality is absent or disabled.
 Remember that the <script> tag always needs to have a matching closing tag.
 
-TOPIC1script.html
-1. Start with the HTML5 document type declaration:
-<!DOCTYPE HTML>
-2. Add a root element containing head and body sections:
-<html lang=“en”>
-<head>
-	<meta charset = “UTF-8”>
-	<title> JavaScript Example </title>
-</head>
-<body>
-	<h1> Static </h1> <h1> Dynamic </h1>
-</body>
-</html>
-3. In the head section, insert an element to incorporate an external
-JavaScript file:
-<script src = “TOPIC1script.js”> </script>
+Refer to:
+script.html
+&
+script.js
 
-TOPIC1script.js
-4. In the body section, insert a fallback message:
-<noscript> JavaScript Is Not Enabled! </noscript>
-5. Save the HTML5 document then open a new text editor window and copy this
-script, exactly as it is listed:
-function init()
-{
-	var h1tags = document.getElementsByTagName(“h1”);
-	h1tags[1].onclick = react;
-}
-
-function react()
-{
-	this.innerHTML = “Clicked!”; this.style.color = “red”;
-}
-onload = init;
-6. Save the JavaScript file as “TOPIC1script.js” in the same directory as the
-HTML5 document "TOPIC1script.html", then open the web page in your browser and
-click on the second heading.
-This script attaches a behavior to the second heading element, so when it gets
-clicked by the user, its text content and color change.
-You can learn more about scripting with the companion book in this series
-JavaScript in easy steps.
-
-	Incorporating style sheets
+6.	Incorporating style sheets
 Style sheets can be incorporated within HTML documents to control the
 presentational aspects of each element on the page.
 The use of style sheets has replaced all features of HTML that formerly related
@@ -607,7 +427,7 @@ tag unless you are incorporating a style sheet that uses a different styling
 language. For example, a simple style sheet containing rules to
 determine the appearance of all size-one headings could look like this:
 <style>
-h1 { color : red ; background : yellow ; }
+	h1 {color: red; background: yellow}
 </style>
 This is acceptable and will validate but, in line with the aim of HTML5 to
 separate content from presentation, style sheets are best contained within a
@@ -629,40 +449,12 @@ The <link> tag is a single tag – it does not have a matching closing tag.
 See the element tags list on the inside front cover of this book to find other
 single tags.
 
-TOPIC1style.html
-1. Start with the HTML5 document type declaration
-<!DOCTYPE HTML>
-2. Add a root element containing head and body sections
-<html lang=“en”>
-<head>
-<meta charset=“UTF-8”>
-<title>Style Sheet Example</title>
-</head>
-<body>
-<h1>Styled Heading</h1>
-</body>
-</html>
-3. Within the head section, insert a link to an adjacent style sheet file:
-<link rel=“stylesheet” href=“style.css”>
+Refer to:
+style.html
+&
+style.css
 
-TOPIC1style.css
-4. Save the HTML document, then open a new text editor window and precisely
-copy this style sheet:
-h1
-{
-	color : red ;
-	background : yellow ;
-	border : 10px dashed blue ;
-	padding: 5px ;
-	width: 550px ;
-}
-5. Save the Cascading Style Sheet file in the same directory as the HTML5
-document, then open the web page in your browser to see the style rules applied.
-Coloring the <h1> element without setting a width rule would reveal that it
-occupies the entire width of the browser window – except for the default margins
-of the body.
-
-	Linking more resources
+7.	Linking more resources
 The <link> tag that was used in the previous example to incorporate a style sheet
 in an HTML5 document can also be used to incorporate other resources into a
 document.
@@ -676,16 +468,16 @@ text/html for HTML files. You can find the list of official MIME types at
 iana.org/assignments/media-types/media-types.xhtml
 
 Permitted rel (relationship) values:
-alternate author bookmark help icon
-license next nofollow noreferrer prev
-search stylesheet tag
+	alternate author bookmark help icon
+	license next nofollow noreferrer prev
+	search stylesheet tag
 
 Many of the link types above are intended to help search engines locate resources
 associated with that HTML document, and the <link> tag may also include a title
 attribute to further describe the resource. For example, a version of the page in
 another language:
-<link rel=“alternate” type=“text/html” href=“esp.html”
-title=“Esta página en Español - This page in Spanish” >
+	<link rel=“alternate” type=“text/html” href=“esp.html”
+		  title=“Esta página en Español - This page in Spanish” >
 
 The W3C HTML 5.1 specifications introduced a rev reverse link attribute for the
 <link> tag that can be used to specify how the document is related to the link.
@@ -696,7 +488,7 @@ The browser can, however, be made to seek a relative address in a different
 directory by inserting a <base> tag at the start of the document’s head section.
 Its href attribute can then specify the absolute directory address.
 For example, to specify a separate “resources” directory, like this:
-<base href= “http://localhost/resources/”>
+	<base href= “http://localhost/resources/”>
 
 It is popular to link an icon resource to display in the web browser’s address
 field. This can be placed in a directory specified by the <base> tag for most
@@ -706,37 +498,10 @@ recognize all other resources in the directory specified by the <base> tag.
 When using a <base> element it must be placed in the head section before any
 <link> elements.
 
-TOPIC1link.html
-1. Start with the HTML5 document type declaration
-<!DOCTYPE HTML>
-2. Add a root element containing head and body sections
-<html lang=“en”>
-<head>
-	<meta charset=“UTF-8”>
-	<title>Link Example</title>
-</head>
-<body>
-	<h1>Linked Icon</h1>
-</body>
-</html>
-3. Within the head section, insert elements to specify a base “resources”
-directory and an icon resource:
-<base href=“http://localhost/resources/”>
-<link rel=“icon” href=“cubes.ico”>
-4. Save the HTML document, then open an icon editor, such as IcoFX, and create
-an icon sized 16x16 pixels
-5. Now, save the icon in the “resources” directory, named as “cubes.ico”, and also
-save a copy in the root directory, named precisely as “favicon.ico” – for Internet
-Explorer
-6. Open the HTML document in your web browser via a web server to see the icon
-resource appear in the address field
-At the time of writing, this example is supported in all web browsers except
-Microsoft Edge.
-This page is served to the browser by a local web server using the default
-“localhost” domain. Simply opening a local copy of this example in a browser will
-not display the icon.
+Refer to:
+link.html
 
-	Chapter 2 Summary
+	Summary
 • A document title is used by search engines and may be seen in a browser’s title
 bar, navigation tab, bookmarks, and history.
 • Document content and titles can include character entity references to display
