@@ -1,0 +1,3 @@
+﻿article.sidebar > p,aside {
+    display:table-cell; padding-right:20px;
+}

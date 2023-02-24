@@ -1,0 +1,13 @@
+#menu ul li {
+	color: orange
+}
+#menu ol li {
+	color: purple
+}
+
+ul li {
+	color: red
+}
+ol li {
+	color: blue
+}

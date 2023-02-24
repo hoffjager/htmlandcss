@@ -1,0 +1,3481 @@
+Topic 3: Document Structure using HTML
+
+Overview
+3.1 Construct and analyse markup to structure content and organise data:
+	table tags (table, tr, th, td), h1-h6, p, br, hr, div, span, ul, ol, li
+
+3.2 Construct and analyse markup that uses HTML5 semantic elements:
+	semantic tags (header, nav, section, article, aside, footer, details,
+		summary, figure, caption)
+
+3.3 Construct and analyze markup that implements navigation:
+	target, anchor (a href), bookmark, relative vs. absolute links,
+	navigating simple folder hierarchies, map, area
+
+3.4 Construct and analyze markup that uses form elements:
+	Form attributes, action, method, submission methods, input types and
+	restrictions, select, textarea, button, option, label
+
+HTML5 in Easy Steps, 2nd Edition, Mike McGrath In Easy Steps 2017
+Chapter 3: Creating Body Content:
+	Working the body
+	Inserting paragraphs
+	Including quotations
+	Emphasizing text
+	Reading the small print
+	Marking text
+	Keeping preformatted text
+	Modifying text
+	Including code in text
+	Giving tooltip advice
+	Adding images
+	Directing languages
+	Chapter 3 Summary
+
+Chapter 4: Inserting Hyperlinks:
+	Creating hyperlinks
+	Accessing links via keys
+	Linking to page fragments
+	Linking to protocols
+	Using images as hyperlinks
+	Producing image map links
+	Generating popups
+	Chapter 4 Summary
+
+Chapter 5: Arranging Content Sections:
+	Proclaiming Headings
+	Grouping headers
+	Providing navigation
+	Writing articles
+	Standing aside
+	Footing the page
+	Positioning content
+	Denying anonymity
+	Chapter 5 Summary
+
+Chapter 6: Writing Lists and Tables:
+	Creating unordered lists
+	Creating ordered lists
+	Creating definition lists
+	Producing a simple table
+	Spanning cells over rows
+	Spanning cells across columns
+	Adding a header and footer
+	Aligning cell content
+	Grouping columns
+	Setting column widths
+	Utilizing templates
+	Chapter 6 Summary
+
+Chapter 8: Building Input Forms:
+	Submitting forms
+	Gathering text input
+	Controlling input type
+	Providing text areas
+	Checking boxes
+	Choosing radio buttons
+	Selecting options
+	Utilizing hidden data
+	Pushing buttons
+	Using images for submission
+	Adding logos to buttons
+	Labeling form controls
+	Listing data options
+	Uploading files
+	Chapter 8 Summary
+
+Chapter 3: Creating Body Content
+	Working the body
+Every HTML5 document should contain exactly one opening <body> tag and exactly
+one matching closing </body> tag – defining the body section to contain all
+document content that is intended for display in the web browser window.
+Scripts and style sheets are best contained in separate files and incorporated
+into the HTML document by <script> and <link> elements placed within its head
+section.
+The body section of an HTML document should not contain any meta data, scripts,
+or style sheets – <meta>, <script>, and <link> elements all belong in the head
+section.
+Uniquely, the opening <body> tag may contain an attribute to reference the “load”
+event that occurs when the page has completely loaded in the web browser. The
+onload attribute is useful when scripting to respond to the load page event.
+The onload attribute references the same load event that was used in the example
+here to create an “event-handler” function. Within the <body> tag, the onload
+attribute can specify the name of a script function to call when the load event
+occurs.
+In scripting terms, onload and alert() are both members of the window object, so
+you may find them written in scripts as window.onload and window.alert() – but as
+the window object is top-level in the document object hierarchy, the window.
+prefix is unnecessary.
+Alternatively, short script “snippets” can simply be assigned to the attributes
+within the HTML <body> tag. For example, the onload attribute could call upon the
+intrinsic alert() function to launch an alert dialog whenever that page gets
+loaded. This function can specify a message to be displayed by the dialog as a
+text string within quotes between the function parentheses.
+With entire attribute values surrounded by double quotes, it is important to
+enclose the message text string within single quotes to avoid terminating the
+attribute value prematurely, like this:
+<body onload = "alert('Greetings!')">
+If double quotes were used throughout in the example above, the attribute value
+would become:
+“alert(”.
+This principle of differentiating text strings must be applied to any attribute
+value that contains a “nested” quote.
+The onload event call to the alert() function relies upon the browser being
+enabled for JavaScript in order to launch the dialog. A <noscript> element can be
+incorporated in the document body to advise the user when JavaScript is disabled.
+The onload attribute is a remnant from earlier versions of HTML. It is better to
+specify event- handler functions in a script file – in line with the aim of HTML5
+to separate content from presentation.
+TOPIC3body.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Body Attributes</title>
+</head>
+<body onload= ”alert(‘Greetings!’ )”>
+	<noscript>JavaScript Is Not Enabled!</noscript>
+	<h1>Page Loaded</h1>
+</body>
+</html>
+3. Save the HTML document, then open it in your web browser to see the alert
+dialog appear when it loads.
+4. Close the alert dialog, then disable JavaScript support and reload the page
+to see the advisory message.
+The alert dialog is “modal” – the user must click OK to close it before the page
+will completely load.
+With the Firefox web browser, shown here, enter about:config in its address bar,
+then accept the “risk” warning and click the javascript:enabled item to false –
+to disable JavaScript support.
+
+	Inserting paragraphs
+All text content is traditionally separated into sentences and paragraphs, to be
+more easily read and more readily understood. This is also true for text content
+in HTML5 documents, and their paragraphs are contained within <p> </p> tags. Each
+paragraph element is visually separated from the next one by the browser –
+typically leaving two empty lines between them.
+Text within a paragraph will normally automatically wrap to the next line when it
+meets the element’s edge, but it can be forced to wrap sooner by inserting a
+line break <br> tag.
+For emphasis, a horizontal rule <hr> tag can be inserted between paragraphs to
+draw a line separating them. The <hr> tag cannot, however, be inserted inside a
+paragraph to separate sentences. You may be surprised to find the <hr> tag in
+HTML5, as it would seem to perform a purely presentational function. It is,
+however, described in the specifications as representing a “paragraph-level
+thematic break”, such as a scene change in a story.
+The <br> tag and <hr> tag are both single tags that need no matching closing tag.
+TOPIC3paragraph.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Paragraph Example</title>
+</head>
+<body>
+	<!-- Heading and paragraphs to be inserted here -->
+</body>
+</html>
+3. Insert a large heading within the body section:
+<h1>The Statue of Liberty</h1>
+4. Next, add a paragraph within the body section:
+<p>The Statue of Liberty was built over nine years by French sculptor, Auguste
+Bartholdi. Upon its completion in 1884, all 350 individual pieces of the statue
+were packed into 214 crates for the long boat ride from France to New York.</p>
+5. After the paragraph, add a horizontal ruled line:
+<hr>
+6. After the horizontal ruled line, add a second paragraph:
+<p>The statue arrived in America several months later and was reconstructed on
+Liberty Island. Auguste Bartholdi thought that the New York harbor was the perfect
+setting for his masterpiece because it was where immigrants got their first view
+of the New World.</p>
+7. Now, insert breaks into the paragraphs to control the length of their lines:
+<p>The Statue of Liberty was built over nine years by French sculptor, Auguste
+Bartholdi.<br>Upon its completion in 1884, all 350 individual pieces of the statue
+were packed into <br>214 crates for the long boat ride from France to New York.</p>
+<p>The statue arrived in America several months later and was reconstructed on
+Liberty Island.<br> Auguste Bartholdi thought that the New York harbor was the
+perfect <br>setting for his masterpiece because it was where immigrants got their
+first view of <br>the New World.</p>
+8. Save the HTML document, then open it in your web browser to see the heading,
+paragraphs, forced line breaks, and horizontal ruled line.
+The <hr> element can be considered to be the HTML equivalent of the *** section
+separator often found in stories and essays.
+
+	Including quotations
+It is important to recognize that some HTML5 elements produce a rectangular block
+area on the page in which to display content, while others merely produce a small
+block on a line within an outer containing block. These are referred to as “flow”
+and “phrasing” elements. Phrasing elements, which produce a small block on a line,
+must always be enclosed by a flow element, which produces the larger containing
+block, such as <p> </p>. The difference between flow elements and phrasing
+elements can be seen by contrasting how web browsers display the two HTML elements
+that are used to include quotations in documents.
+The <blockquote> </blockquote> tags are intended to surround long quotations from
+another source, which can be specified by its cite attribute. For this element,
+the browser typically produces a rectangular block area to contain the quotation,
+starting on a new line and indented from surrounding content – so <blockquote>
+is a flow element.
+The <q> </q> tags, on the other hand, are intended to surround short quotations
+from another source, which can be specified by its cite attribute. For this
+element, the browser typically produces a small block area on the current line to
+contain the quotation – so <q> is a phrasing element.
+Unlike the <blockquote> flow element, the <q> phrasing element causes the browser
+to automatically add quotation marks around the element’s content when it gets
+displayed on the page. Ideally, these should be double quotation marks surrounding
+the entire element content, and single quotation marks around any inner nested
+quotations, but its implementation may vary.
+TOPIC3quote.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Quotation Example</title>
+</head>
+<body>
+	<p>A Paragraph Flow Block!</p>
+</body>
+</html>
+3. Within the body section insert a blockquote containing two small nested
+quotations:
+<blockquote cite=”http://www.example.com/origin.html”> A Blockquote Flow Block!
+<br>Paul said, <q>I saw Emma at lunch, she told me <q>Susan wants you to get
+some ice cream on your way home.</q> I think I will get some at Ben and Jerry’s on
+Main Street.</q> </blockquote>	
+4. Save the HTML document, then open it to compare the double quote marks,
+single quote marks, and apostrophe.
+5. Insert this style sheet into the head section of the document, then reload
+the page to reveal the blocks:
+<style>
+p, blockquote {border: 1px solid red;}
+q {background: aqua;}
+</style>
+By default, the paragraph element block will fill the width of its containing
+element – like the <h1> element block in the example here.
+The flow elements are shown here with red solid borders, and the phrasing
+elements with a light blue background.
+
+	Emphasizing text
+HTML5 provides four phrasing elements that can be used to emphasize text within
+the body of a document:
+• Text enclosed between <b> </b> tags is enhanced without conveying extra
+importance, such as keywords in a paragraph – typically displayed in a bold font.
+• Text enclosed between <i> </i> tags is enhanced without conveying extra
+importance, such as technical terms in a paragraph – typically displayed in an
+italic font.
+• Text enclosed between <strong> </strong> tags gains increased importance,
+without changing the meaning of the sentence – typically displayed in a bold font.
+• Text enclosed between <em> </em> tags should be stressed to deliberately affect
+the meaning of the sentence – typically displayed in an italic font.
+It is perhaps surprising that the <b> and <i> tags remain in HTML5, as they
+outwardly suggest that content should be presented in a bold or italic font –
+contradicting the aim of HTML5 to separate structure from presentation. According
+to the specifications, their meaning has been redefined, however, so content
+within a <b> element should be “stylistically offset” and that within an <i>
+element should be seen as in an “alternate voice”. In real terms, these are
+nonetheless represented by bold and italic fonts but should only be used as a
+last resort as they do not convey meaning – use <strong> and <em> tags instead.
+The specifications encourage web page authors to consider accessibility issues
+in all aspects of their web page designs.
+The advantage of the <strong> and <em> tags is that they describe the importance
+of their content relative to surrounding text, and let the browser choose how it
+should be presented. Additionally, these tags are more relevant to suggest how
+narrators should convey their content vocally.
+As with many HTML tags, the <strong> and <em> tags can be nested, but care must
+be taken to close nested elements correctly. For example, <strong><em>...</em>
+</strong> is the correct order, whereas <strong><em>...</strong></em> is incorrect
+and will not validate.
+TOPIC3emphasis.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Emphasis Example</title>
+</head>
+<body>
+	<!-- Document content to be added here -->
+</body>
+</html>
+3. Within the body section, add a paragraph that emphasizes some text without
+affecting the meaning of the sentence:
+<p><strong>Warning.</strong> This dungeon is dangerous.<strong>Avoid the
+ducks.</strong> Take any gold you find.<strong>Do not take any of the diamonds,
+they are explosive.</strong> You have been warned.</p>
+4. Next, within the body section, add paragraphs that emphasize some text to
+affect the meaning of the sentence:
+<p><em>Puppy dogs</em> are cute.</p>
+<p>Puppy dogs <em>are</em> cute.</p>
+<p>Puppy dogs are <em>cute.</em></p>
+5. Save the HTML document, then open it in your web browser to see how the text
+has been emphasized.
+The <b> tag should be avoided wherever possible, but one legitimate use is to
+markup the lead sentence of an article.
+
+	Reading the small print
+HTML5 provides three elements that can be used to format text within the body of
+a document:
+• Text enclosed between <small> </small> tags is regarded as a side comment to
+surrounding text, such as copyright information – typically displayed in a
+smaller font.
+• Text enclosed within <del> </del> tags is regarded as having been removed from
+the document, such as a completed item in a to-do list – typically displayed with
+a strike-through line.
+• Text enclosed within <ins> </ins> tags is regarded as having been added to the
+document, such as a new additional item in a “to do” list – typically displayed
+with an underline.
+The <del> and <ins> tags may optionally include a cite attribute to specify the
+URL of a document explaining the changes made.
+The <small> tag is only meant to contain short comments that supplement
+surrounding content. It is not intended for use with large sections of text, such
+as multiple paragraphs, as that would be considerably more than a side comment.
+In displaying content contained within a <small> element, the web browser
+considers the size of the font used to display the surrounding content, then
+applies an appropriate reduction. Therefore, where the surrounding content is
+displayed with a font of 12-point size, content contained within a <small> element
+might be displayed with a font of 10-point size – the precise size is determined
+by the browser.
+Both <del> and <ins> elements can be used within a section of content, to mark up
+snippets of changed text, and to enclose entire sections of changed content, such
+as replaced paragraphs.
+TOPIC3format.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Format Example</title>
+</head>
+<body>
+	<!-- Content to be added here -->
+</body>
+</html>
+3. Within the body section, insert a paragraph containing a side comment for
+legal purposes:
+<p>Example Corp today announced record profits for the second quarter <small>
+(Full Disclosure: EG News is a subsidiary of Example Corp)</small>, leading to
+speculation about a merger with Demo Group.</p>
+4. Next, insert a large heading and a regular paragraph:
+<h1>To Do List</h1>
+<p>Empty the dishwasher</p>
+5. Now, insert a paragraph that has been deleted:
+<del><p>Take out the trash</p></del>
+6. Then, insert a paragraph that has been added:
+<ins><p>Sweep the yard</p></ins>
+7. Finally, insert a paragraph that has been added, which contains a text snippet
+that has been changed:
+<ins>
+	<p>Feed the <del>dog</del><ins>cat</ins></p>
+</ins>
+8. Save the HTML document, then open it in your web browser to see how the text
+has been formatted.
+The <big> and <tt> tags in the previous version of HTML are now obsolete, as they
+were seen as presentational.
+The <small> tag does not denote content of lesser importance, only that it is a
+side comment to surrounding text.
+
+	Marking text
+HTML5 provides four phrasing elements that can be used to mark text for special
+treatment within the body of a document:
+• Text enclosed between <s> </s> tags is marked as being superseded by more
+accurate or relevant up-to-date content – typically displayed with a
+strike-through line.
+• Text enclosed between <u> </u> tags is marked as being different in some way to
+normal text content – typically displayed with an underscore line to underline
+the text.
+• Text enclosed between <mark> </mark> tags is marked as being of special
+significance for reference – typically displayed in a colored background block
+to highlight the text.
+• Text broken by a <wbr> tag is invisibly marked as being a suitable point at
+which to break a line of text – representing a word-break opportunity.
+The <s>, <mark>, and <wbr> tags are new elements introduced in HTML 5.1,
+whereas the <u> tag has been reinstated in HTML 5.1 after previously being
+deprecated.
+It is important to note that specifications state that the <s> tag should not be
+used to indicate edited content within a document. The <del> tag should be used
+instead to indicate document edits.
+Similarly, the <mark> tag should not be used to emphasize the importance of text
+content, but should only be used to highlight the relevance of text within a
+document. The <strong> and <em> tags should be used instead to indicate emphasis.
+The <u> tag was deprecated in the HTML 5.0 specification, as underlined text
+within a document traditionally indicates hyperlinks. The <u> tag has, however,
+reappeared in the HTML 5.1 specification for the purposes of labeling misspelled
+words or proper names in Chinese. Authors are nonetheless strongly discouraged
+from using the <u> tag for emphasis, to avoid confusion with hyperlinks. Once
+again, the <strong> and <em> tags should be used instead to indicate emphasis.
+Where the document contains lengthy content that may exceed the width of the
+browser, you may wish to use the <wbr> tag to indicate appropriate points at which
+a line-break can be inserted.
+Use style sheet rules for presentation purposes rather than the <u> tag for
+underlines.
+TOPIC3mark.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Mark Example</title>
+</head>
+<body>
+	<!-- Document content to be added here -->
+</body>
+</html>
+3. Within the body section, add a paragraph that marks a word-break opportunity:
+<p>Microsoft Surface Pro 4
+<wbr>- 128GB / Intel Core i5</p>
+4. Next, within the body section, add a paragraph that marks a superseded price
+and provides a current price:
+<p><s>$999</s> $799</p>
+5. Now, within the body section, add paragraphs that mark text for reference and
+mark a misspelled word:
+<p>Memory: <mark>4GB</mark>
+<br>Screen: <mark>12.3-inch</mark></p>
+<p>Surface <u>Penn</u> Included</p>
+6. Save the HTML document then open it in your web browser to see how the text
+has been marked.
+Suggesting word-break opportunities with <wbr> is particularly suitable for small
+devices, but implementation is dependent upon support for this feature in the
+browser.
+
+	Keeping preformatted text
+Where it is desirable to have the browser render text content that has been
+“preformatted”, the web page author can enclose that content between <pre> </pre>
+flow element tags. These advise the browser that the following instructions should
+be applied:
+• Preserve white space
+• Render all text with a fixed-width font
+• Disable automatic word-wrapping
+• Do not disable bi-directional processing
+Preserving the white space retains all spaces, tabs and line breaks. This is
+great to display lengthy poems in which every second line is indented.
+Each second line is indented by four character widths – created by hitting the
+space bar four times to insert four invisible space characters. These indents will
+be exactly preserved by the <pre> element as four character widths.
+Use spaces rather than tabs when preparing preformatted text.
+Tab characters, on the other hand, can present some surprises as they are usually
+interpreted by a browser as eight character widths. This agrees with the tab size
+in Windows’ Notepad application but other text editors can vary. This means that
+preformatted text containing tab characters may appear to be mis-aligned by the
+<pre> element. It is for this reason that the specifications discourage the use of
+tab characters when creating preformatted text content.
+The <pre> </pre> tags can also be useful to ensure “Text-Art”, sometimes used as
+web forum signatures, will appear as intended.
+TOPIC3preformat.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Preformat Example</title>
+</head>
+<body>
+	<!-- Content to be added here -->
+</body>
+</html>
+3. Within the body section, insert a document heading:
+<h1>Text-Art Signature</h1>
+4. Ensure that the font in your text editor is set to a fixed width font, such as
+Lucida Console for Notepad.
+5. Next, in the body section, insert a <pre> element containing preformatted
+content in a fixed width font – and produced without any tab characters
+<pre>
+</pre>
+6. Save the HTML document, then open it in your web browser to ensure the
+content retains preformatting.
+Notice that <pre> is a flow element so it does not need to be enclosed within a
+paragraph – it creates its own block.
+You can use any character within a fixed width font to create your Text-Art –
+Windows users can use the Character Map program in System Tools to select
+special characters from the Lucida Console font.
+
+	Modifying text
+Regular text in a paragraph area of a web page is displayed in invisible inline
+phrasing boxes that comprise an outer logical box, and an inner font box
+containing a baseline:
+You can find a chart of all character entities at:
+dev.w3.org/html5/htmlauthor/charref
+The vertical line spacing is determined by the font height to allow space between
+characters that extend below the baseline, such as “p”, and tall characters that
+extend upwards, such as “b”, plus a vertical margin area.
+Additionally, the font box will accommodate “superscript”, such as the trademark
+symbol ™ produced by the &trade; character entity. Superscript is any text, number
+or symbol that appears smaller than regular text and is set above the baseline.
+Mathematical formulae can use superscript to indicate numeric powers with the
+character entities &sup2; for ² and &sup3; for ³. The font box will also
+accommodate “subscript” – that appears smaller than regular text and is set below
+the baseline.
+The height available for superscript and subscript with the standard vertical line
+spacing is limited so the character size is restricted. Rather than use character
+entities for this purpose, it is often better to use the HTML5 <sup> </sup> tags
+for superscript and <sub> </sub> tags for subscript. These elements increase the
+vertical line spacing to allow more prominent superscript and subscript
+characters. For example, <sup>2</sup> is larger than &sup2;. Additionally, any
+content can be included within these elements so you are not restricted to
+available character entity references.
+TOPIC3modify.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Modify Text Example</title>
+</head>
+<body>
+	<!-- Content to be added here -->
+</body>
+</html>
+3. Within the body section, insert a paragraph containing superscript produced by
+character entities:
+<p>
+	Square of four: 4&sup2; = 16 <br>
+	Cube of four: 4&sup3; = 64
+</p>
+4. Now, in the body section, insert a similar paragraph containing superscript
+produced by HTML elements:
+<p>
+	Square of four: 4<sup>2</sup> = 16 <br>
+	Cube of four: 4<sup>3</sup> = 64
+</p>
+5. Finally, in the body section, insert a paragraph containing subscript produced
+by HTML elements:
+<p>
+	Water: H<sub>2</sub>O <br>
+	Sulphuric Acid: H<sub>2</sub>SO<sub>4</sub>
+</p>
+6. Save the document, then open it in your browser to compare the superscript and
+to see the subscript text.
+When using superscript ² in paragraphs to denote area, such as 10 feet², you may
+prefer to use the entity &sup2; rather than <sup>2</sup> to keep line spacings
+equal.
+
+	Including code in text
+HTML5 provides five phrasing elements specifically to include computer program
+code within the body of a document:
+• Complete program code, or snippets, can be enclosed between <code> </code>
+tags for displaying in a suitable font.
+• Program variable instances can be enclosed between <var> </var> tags to
+differentiate them from regular text.
+• Sample program input and output can be enclosed between <samp> </samp> tags
+to differentiate them from regular text.
+• Content that also has associated machine-readable code can be enclosed between
+<data> </data> tags and the code specified to its required value attribute.
+• Dates and times can be enclosed in <time> </time> tags and a machine-readable
+version specified to its datetime attribute.
+The datetime value of a <time> element must be in a valid format, for example, as
+full datetime with 2017-12-25 14:30 or month as 2017-12 or date as 2017-12-25 or
+day with 12-25 or time only as 14:30.
+The <data> element could, for example, describe a book title and its
+machine-readable ISBN, then the <time> element could describe that book’s
+publication date:
+TOPIC3code.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Program Code Example</title>
+</head>
+<body>
+	<!-- Content to be added here -->
+</body>
+</html>
+3. In the body section, insert a program description containing variables,
+sample input, and sample output:
+<p> This program assigns an input value to <var>degF</var> then performs a
+conversion on that value, assigning the result to <var>degC</var> for output.
+For example, input of <samp>98.6</samp> will output <samp>37C</samp>. </p>
+4. Next, in the body section, insert preformatted program code:
+<pre>
+<code>
+	#include &lt;iostream&gt;
+	using namespace std;
+	int main() {
+		float degF, degC;
+		cout &lt;&lt; “Enter Fahrenheit Temperature: “;
+		cin &gt;&gt; degF;
+		degC = ((degF - 32.0 ) * (5.0 / 9.0));
+		cout &lt;&lt; degF &lt;&lt; “F is “ &lt;&lt; degC &lt;&lt; “C”;
+		cout &lt;&lt; endl;
+		return 0;
+		}
+</code>
+</pre>
+5. Now, in the body section, state the program code source:
+<data value=”978-1-84078-719-1”>
+C++ Programming in easy steps, 5th Edition</data>
+<time datetime=”2016-12-15”>
+(December 15th, 2016)</time>
+6. Save the HTML document, then open it in your web browser to see how the
+program description, code and source details appear.
+Note that all angled bracket characters in the program code have been replaced by
+character entities to avoid conflict with the HTML tags.
+Remember to insert the phrasing <code> element within a <pre> flow element to
+preserve the program code layout in an HTML document.
+
+	Giving tooltip advice
+HTML5 provides four phrasing elements that can be used to designate advisory
+phrases within the body of a document:
+• Text can be enclosed between <abbr> </abbr> tags to indicate it is an
+abbreviation.
+• Text can be enclosed between <cite> </cite> tags to indicate it is a citation
+or reference from another source.
+• Text can be enclosed between <dfn> </dfn> tags to indicate it is the definitive
+instance of that term.
+• Text can be enclosed between <kbd> </kbd> tags to indicate input to be entered
+by the user from the keyboard.
+Every HTML5 element that can legally appear within the body of a document may
+optionally include a title attribute. Values specified to a title attribute are
+typically displayed as a tooltip that pops up when the user places the cursor over
+the element. This means that each of the phrasing elements listed above can
+include a title attribute to expand on the meaning of its content.
+TOPIC3advice.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Advice Example</title>
+</head>
+<body>
+	<!-- Content to be added here -->
+</body>
+</html>
+3. In the body section, insert a paragraph containing an abbreviation with
+tooltip advice:
+<p>
+	<abbr title=”HyperText Markup Language”>HTML</abbr>5 in easy steps
+</p>
+4. Next, insert a citation reference with tooltip advice:
+<p>
+	<cite title=”Inventor of the HyperText Markup
+		Language”>Sir Tim Berners-Lee</cite>
+</p>
+5. Now, insert a definitive term with tooltip advice:
+<p>
+	<dfn title=”The popular language of the WorldWideWeb. Commonly abbreviated
+to ‘HTML’”> HyperText Markup Language</dfn>
+</p>
+6. Then, insert a keyboard instruction with tooltip advice:
+<p>
+	<kbd title=”Press the Y key on your keyboard to execute a script. This
+	requires JavaScript to be enabled in your browser”>
+	Hit Y to Continue.</kbd>
+</p>
+7. Finally, add an element in the head section to identify a script that will
+respond to the keyboard instruction:
+<script src=”TOPIC3advice.js”> </script>
+TOPIC3advice.js
+8. Save the HTML document, then exactly copy the script below and save it as
+“TOPIC3advice.js” alongside the HTML file:
+function showkey(e) {
+	var obj = (navigator.appName === “Microsoft Internet Explorer”)
+	? event: e;
+	if(obj.keyCode === 89 || obj.keyCode === 121)
+	alert(“Y pressed. Thank You.”);
+	}
+document.onkeydown = showkey;
+9. Open the HTML document and place the cursor over the elements to see the
+individual tooltips.
+10. With JavaScript support enabled in your browser, press the Y key to see the
+script response.
+Remember to use single quote marks for nested quotes – as with ‘HTML’ in Step 5.
+The script looks at the keycode when the key gets pressed and will respond to
+lowercase “y” and uppercase “Y”.
+
+	Adding images
+The ability to add images to HTML document content introduces lots of exciting
+possibilities. An image is easily added to the document using the <img> tag,
+which should preferably always include these attributes:
+• An src attribute is required to specify the image location URL, by either its
+absolute or relative path.
+• A width attribute is recommended to specify the pixel width of the area the
+image will occupy on the page.
+• A height attribute is recommended to specify the pixel height of the area the
+image will occupy on the page.
+• An alt attribute is recommended to specify text describing the image, for
+occasions when the image cannot be loaded.
+Attributes in HTML tags can appear in any order.
+The values assigned to the width and height attributes instruct the web browser to
+create a content area on the web page of that size. This need not be the actual
+dimensions of the image, as the web browser can render the image in another
+specified size. Care must be taken to avoid distortion by ensuring the dimensions
+are scaled in proportion to the actual image size. Additionally, images should
+only be scaled down, as scaling up often results in pixelation – where individual
+pixels are visible to the eye. It is inefficient, however, to rely upon the
+browser to scale images that are not to be displayed full size as this requires
+downloading unnecessarily larger files. It is better to adjust the image size to
+the actual dimensions it will occupy on the web page using a graphics editor,
+such as Photoshop, so it will download and display faster.
+The optimum file type for web bitmap graphics is the popular non-proprietary
+Portable Network Graphics (PNG) format, which produces compact files and supports
+transparency.
+Avoid the BMP bitmap file format for web graphics – saving the original image
+shown here as fish.bmp creates a file size of 790KB!
+TOPIC3image.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Image Example</title>
+</head>
+<body>
+	<!-- Content to be added here -->
+</body>
+</html>
+3. Within the body section, insert three image elements – to display a graphic
+at full size plus two scaled versions:
+<img src=”doctorzoidberg.png” width=”200” height=”150” alt=”zoidberg”>
+<img src=”doctorzoidberg.png” width=”150” height=”112” alt=”zoidberg”>
+<img src=”doctorzoidberg.png” width=”100” height=”75” alt=”zoidberg”>
+4. Save the document, then open it in your browser to see the background shining
+through transparent image areas.
+To change Firefox’s default background color, select the hamburger button,
+Options, Content, Colors, then click Background and choose a new color.
+
+	Directing languages
+The recommended UTF-8 document encoding format provides support for bi-directional
+text, so that characters from languages written right-to-left, such as Hebrew, are
+automatically written in that direction and may appear alongside left-to-right
+text such as English. Content to be read in right-to-left direction should be
+enclosed within <bdi> </bdi> bi-directional isolation tags so as not to confuse
+the browser, as it expects to read left-to-right. Additionally, HTML5 provides a
+<bdo> bi-direction override element to which a text direction can be explicitly
+specified as either “ltr” or “rtl” by its dir attribute. The bi-direction override
+allows characters from right-to-left languages to be written as character entities
+in an HTML document in “logical” left-to-right order, but to be displayed in
+“visual” right-to-left order. For example, the <bdo> element below encloses five
+character entities from left-to-right, in the order they may have been
+entered, but displays them right-to-left:
+<bdo dir=”rtl”>&#1497;&#1513;&#1512;&#1488;&#1500;</bdo>
+.... appears as לארשי (Yiśrā’ēl in the Latin alphabet).
+Without the bi-direction override, these character entities get displayed in their
+logical order as ישראל – which is back-to-front for the right-to-left Hebrew
+language.
+Ruby annotation
+For Eastern languages, HTML5 supports “ruby annotation” that usefully provides
+pronunciation alongside text. In Japanese, for example, there is more than one
+alphabet.
+Text written in the semantic “kanji” alphabet, which has thousands of characters,
+is often annotated with its equivalent in the phonetic “hiragana” language, which
+has around 50 characters, to aid pronunciation. This is called “furigana” in
+Japanese and “ruby” in English – named after the small font used to indicate the
+pronunciation. For the benefit of Westerners, the Japanese kanji text can be
+annotated with “romaji” – its Latin alphabet equivalent. Similarly in Chinese,
+text written in the “mandarin” alphabet can be annotated with “pinyin” – its
+Latin alphabet equivalent.
+Don’t confuse ruby annotation with the unconnected Ruby programming language.
+HTML5 ruby annotation is entirely enclosed between root <ruby> </ruby> tags. This
+element may then enclose the Eastern text within <rb> </rb> tags (ruby base) and
+the pronunciation between <rt> </rt> (ruby text) tags. Optionally, the entire
+<rt> element can be enclosed between <rp> </rp> (ruby parentheses) tags to display
+the pronunciation in parentheses after the main text in old browsers that do not
+support ruby annotation, and an English language equivalent provided within
+<rtc> </rtc> tags.
+TOPIC3ruby.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Ruby Example</title>
+</head>
+<body>
+	<!-- Content to be added here -->
+</body>
+</html>
+3. In the body section, insert an element for Japanese text with its appropriate
+pronunciation annotation:
+<ruby>
+	<rb>東 京</rb>
+	<rt>tō kyō</rt>
+</ruby>
+4. Surround the pronunciation with ruby parentheses for non-supporting browsers
+and add an English equivalent:
+<rp>
+	(</rp> <rt>tō kyō</rt> <rp>)
+</rp>
+<rtc>Tokyo</rtc>
+5. Next, insert a complete ruby element for Chinese text:
+<ruby>
+	<rb>北 京</rb>
+	<rp> (</rp>
+		<rt>běi jīng</rt>
+		<rp>)
+	</rp>
+	<rtc>Beijing</rtc>
+</ruby>
+6. Save the document, then open it in different browsers to compare how the ruby
+annotations get displayed.
+The ruby elements are illustrated with an added border style for clarity.
+
+	Chapter 3 Summary
+• The <body> element encloses all document content, and its opening tag may include
+an onload scripting attribute.
+• A paragraph is enclosed within a <p> element and may use the <br> tag to force
+breaks between lines of text.
+• Flow elements create a block area on the page, whereas phrasing elements create a
+small block on a line.
+• Long quotations may be enclosed within a <blockquote> flow element, and short
+quotations within a <q> phrasing element.
+• The <em> and <strong> phrasing elements are preferred over the <i> and <b>
+phrasing elements to emphasize text.
+• Side comments can be enclosed within a <small> element and the <ins> and <del>
+elements used to indicate replaced text.
+• The <s> element denotes superseded content, and the <mark> element is used to
+highlight content for reference.
+• The <wbr> element can be used to suggest an appropriate point at which to break a
+word or line of text.
+• To avoid mis-alignment, tab spacing should be avoided when creating preformatted
+text for inclusion within a <pre> element.
+• Superscript and subscript can be included using character entities or using the <sup>
+and <sub> elements.
+• Program code can be included in an HTML document using the <code>, <var> and
+<samp> elements.
+• Machine-readable code can be specified to a value attribute of the <data> tag and
+to a datetime attribute of the <time> tag.
+• The <abbr>, <cite>, <dfn> and <kbd> elements provide advice.
+• Most elements that can appear in the document body can include a title attribute to
+provide tooltip text.
+• The <img> tag places an image on the web page and should preferably always
+include src, width, height and alt attributes.
+• The <bdi> and <bdo> bi-directionals element can be used to surround items of text
+written in a language read right-to-left.
+• Ruby annotation uses <ruby>, <rb>, <rt>, <rp> and <rtc> elements to provide pronunciation aid for Eastern languages.
+
+Chapter 4: Inserting Hyperlinks:
+	Creating hyperlinks
+When the internet carried only text content, “hypertext” provided the ability to
+easily access related documents and was fundamental to the creation of the World
+Wide Web. Today, images can also be used for this purpose, so any navigational
+element of a web page is now referred to as a “hyperlink”. Hyperlinks are enclosed
+between <a> </a> anchor tags, which specify the target URL to an href (hyperlink
+reference) attribute in the opening tag. The web browser will display a hyperlink
+in a manner that distinguishes it from regular text – typically hypertext gains
+an underline and image-based hyperlinks gain a colored border.
+Each web page hyperlink is sensitive to three interactive states:
+• Hover – gaining focus, the cursor is placed over the hyperlink.
+• Active – retrieving the linked resource, the user clicks the hyperlink.
+• Visited – the linked resource has previously been retrieved.
+Style rules can be used to emphasize each hyperlink state.
+TOPIC3hyperlink.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Hyperlink Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3hyperlink.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a hyperlink to a target page, including tooltip
+advice:
+<a href=”target.html” title=”A hyperlink to a target page”>Visit Target</a>
+TOPIC3target.html
+4. Save the HTML document, then create a similar second document containing a
+link targeting the first document:
+<a href=”hyperlink.html” title=”A hyperlink to return”>Return</a>
+TOPIC3hyperlink.css
+5. Save the second HTML document, then create a style sheet to emphasize each
+hyperlink state:
+a:hover {background: yellow;}
+a:active {background: olive;}
+a:visited {background: aqua;}
+6. Save the style sheet, then open the first web page in your browser to see the
+hyperlink in its default state.
+7. Place the cursor over the hyperlink to see its hover state, then hold down the
+left mouse button to see the hyperlink’s active state.
+8. Now, release the mouse button to load the linked target resource, then click
+its hyperlink to reload the first document and see that hyperlink’s visited state.
+The hyperlink on the target page instantly appears in the visited state because
+the browser recognizes that its return target has been previously visited.
+
+	Accessing links via keys
+There are three ways to access the target of a hyperlink:
+• Pointer – a mouse or similar device places a screen pointer over a hyperlink,
+then the user clicks to access its target.
+• Tab – repeatedly hit the Tab key to successively focus on each hyperlink in
+turn, then hit Return to access the target of the currently selected hyperlink.
+• Access Key – hit a designated character key to focus on a particular hyperlink,
+then hit Return to access its target.
+A designated character key is specified for a hyperlink by the accesskey attribute
+of an <a> anchor tag. The method to utilize the designated key generally requires
+the user to press ALT + accesskey with most web browsers, such as Microsoft Edge
+and Google Chrome, but it’s ALT + SHIFT + accesskey with Firefox.
+TOPIC3access.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Access Example</title>
+	<link type="text/css "rel=”stylesheet” href=”access.css” media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert two hyperlinks that designate different
+numeric access key characters:
+<a href=”TOPIC3access.html” accesskey=”1”>Home Page</a> |
+<a href=”TOPIC3catalog.html” accesskey=”2”>Catalog Page</a>
+TOPIC3catalog.html
+4. Save the HTML document, then create a similar second document containing the
+same two hyperlinks:
+<a href=”TOPIC3access.html” accesskey=”1”>Home Page</a> |
+<a href=”TOPIC3catalog.html” accesskey=”2”>Catalog Page</a>
+TOPIC3access.css
+5. Save the second HTML document, then create a style sheet to remove the default
+hyperlink styles and to highlight each hyperlink when they receive focus:
+a {text-decoration: none; color: black;}
+a:focus {background: red; color: white;}
+6. Now, save the style sheet, then open the first web page in your browser to see
+the hyperlinks without default styles.
+7. Hit the Tab key repeatedly until the second hyperlink receives focus, then hit
+Return to follow that link.
+8. Press the appropriate access key combination for your browser and number 1 key,
+such as ALT + 1, then hit Return to follow the first hyperlink.
+Removing the default hyperlink styles means they are no longer easily recognizable
+as links – so it is best avoided unless some other indication makes the user aware
+they can be used for navigation purposes.
+Mac users should press CMD + accesskey with their Safari browser.
+
+	Linking to page fragments
+Hyperlinks can target a specific point in a document that has been created with a
+“fragment” identifier – an element with a unique identifying name assigned to an
+id attribute in its opening tag. Within the hyperlink, the fragment identifier is
+specified to a href attribute in the opening <a> tag prefixed by a # hash
+character. For example, the tag <a href=”#top”> targets an element within the same
+document that contains the unique fragment identifier name of “top”.
+The # hash character is used in HTML to target fragments and to specify
+hexadecimal color values, and in CSS to select elements by their id attribute for
+styling.
+A hyperlink can also target a specific point in a different document using the
+document’s URL, followed by a # hash character, then the fragment identifier. For
+example, the tag <a href=”index.html#top”> targets an element within a document
+named “index.html” that contains the unique fragment identifier name of “top”.
+Following a hyperlink to a fragment identifier displays the document from the
+point where the fragment identifier appears.
+TOPIC3fragment.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Fragment Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3fragment.css” 
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert two hyperlinks that contain fragment
+identifiers and also target different fragments:
+<a id=”top” href=”#btm”>Skip to Page Foot</a> |
+<a id=”next-btm” href=”TOPIC3next.html#btm”>
+	Skip to Next Page Foot</a>
+4. Next, in the body, insert a content paragraph followed by a hyperlink
+containing a fragment identifier and targeting the first hyperlink in the
+document:
+<p class=”yellow-block”>Content...</p>
+<a id=”btm” href=”#top”>Skip to Page Head</a>
+TOPIC3next.html
+5. Save the HTML document, then create a second similar document with
+hyperlinks both above and below content:
+<a id=”top” href=”#btm”>Skip to Page Foot</a>
+<p class=”red-block”>Content...</p>
+<a id=”btm” href=”#top”>Skip to Page Head</a> |
+<a id=”prev-top” href=”fragment.html#top”>
+	Skip to Previous Page Head</a>
+TOPIC3fragment.css
+6. Create a style sheet that sizes and colors the content area of each document –
+representing different page bodies:
+p.yellow-block {height: 700px; background: yellow;}
+p.red-block {height: 700px; background: red;}
+7. Save the style sheet, then open the first web page in your browser and follow
+the hyperlinks to each of this document’s fragments below and above its body
+content.
+8. Now, follow the hyperlink to the fragment in the second document, then return
+to the top of the first document.
+At the end of lengthy pages include a hyperlink to a fragment at the top of the
+page so the user need not scroll back up.
+
+	Linking to protocols
+The href attribute of a hyperlink will typically target a resource using the
+HyperText Transfer protocol http: but it may also target resources using other
+protocols. Script functions can be called with the javascript: protocol, and email
+clients can be invoked by the mailto: protocol.
+TOPIC3protocol.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing a head section, incorporating a style sheet and
+script, and a body section:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Protocol Example</title>
+	<link type= "text/css" rel=”stylesheet” href=”TOPIC3protocol.css”
+		media="screen">
+	<script src=”TOPIC3protocol.js”></script>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert an image and a paragraph containing two
+hyperlinks that target different protocols:
+<img id=”chart” src=”chart.png” alt=”Chart Image”>
+<p id=”links”>
+<a href=”javascript:toggle()”>Show/Hide Chart</a> <br>
+<a href=”mailto:jonnygrealish64@gmail.com”>Email Me</a>
+</p>
+TOPIC3protocol.css
+4. Save the HTML document, then create a style sheet with a rule to hide the
+image and a rule to style the paragraph:
+img#chart { visibility : hidden ; height : 0px ; }
+p#links { padding : 5px ; border : 3px double green ; width : 200px ; }
+TOPIC3protocol.js
+5. Save the style sheet, then create a script to alternately reveal and hide the
+image when the first hyperlink gets activated:
+function toggle()
+{
+	var tag = document.getElementById( “chart” ) ;
+	var hid = ( tag.style.visibility !== “visible” ) ;
+	tag.style.visibility = ( hid ) ? “visible” : “hidden” ;
+	tag.style.height = ( hid ) ? “auto” : “0px” ;
+}
+6. Save the script, then open the web page in your browser and click on the first
+link to reveal the image element.
+7. Click on the first hyperlink to hide the image element again, then click on the
+second hyperlink to launch your default client email application – ready to send
+a message.
+This script first examines the current visibility status of the image element,
+then reverses it.
+The mailto: protocol automatically adds the email address of the recipient in the
+“To” field of the email client.
+
+	Using images as hyperlinks
+To make the navigational features of an HTML document more visually appealing,
+images can be used as hyperlinks – simply by nesting an <img> element within an
+<a> hyperlink element:
+TOPIC3rollover.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Rollover Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3rollover.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a paragraph containing a hyperlink with a
+nested image of a specific size:
+<p class=”btn”>
+<a href=”http://www.youtube.com”>
+<img src=”rollover-btn.png” alt=”Hyperlink to YouTube” width=”192” height=”67”>
+</a>
+</p>
+4. Save the HTML document, then open the web page in your browser and follow
+the hyperlink.
+The dimensions of this button are exaggerated for illustration purposes – web page
+buttons are typically smaller.
+Browsers usually add a border around an image when it is nested within a hyperlink
+to indicate that it is not merely an illustration. Style rules can remove the
+image border and can also swap the image when the cursor is placed over it to
+perform a “rollover”. There are several ways to achieve this effect – the
+technique described below hides the image when the cursor is placed over it, to
+reveal the background image on the container element behind.
+TOPIC3rollover.css
+5. Create a style sheet beginning with a rule to set the paragraph container
+element to the same size as the button image and to specify the container’s
+background image:
+p.btn {width: 192px; height: 67px; background: url(rollover-bg.png);}
+6. Next, add a style rule to set the nested hyperlink element to the same size as
+the button image:
+p.btn a {display: block; width: 192px; height: 67px;}
+7. Now, add a style rule to remove the default border from around the nested
+button image element:
+p.btn a img {border: 0px;}
+8. Finally, add a style rule to hide the button image when the cursor is placed
+over it:
+p.btn a:hover img {visibility: hidden;}
+9. Save the style sheet then open the web page in your browser to see the border
+removed and the rollover effect.
+Unlike some other rollover techniques, here both images are already loaded, so the
+rollover performs instantly – and the <img> tag provides alternative text when
+images are disabled.
+
+	Producing image map links
+A single image can target multiple hyperlink resources if an image “map” is added
+to define “hot spot” areas for each hyperlink. To use an image map, the <img> tag
+must include a usemap attribute to specify a map name, prefixed by a # hash
+character. The image map itself is contained between <map> </map> tags, and its
+name is specified by a name attribute in the opening <map> tag.
+Each area of the image that is to become a hyperlink hot spot is defined by four
+attributes of an <area> tag within the <map> element. The shape attribute
+specifies its shape as rect (rectangle), circle or poly (polygon), and the coords
+attribute specifies a comma-separated list of its x-axis and y-axis coordinates:
+rect: top-left x, top-left y, bottom-right x, bottom-right y
+circle: center x, center y, radius
+poly: x1,y1,x2,y2,x3,y3,etc. – one pair for each point. The first and final point
+must have identical coordinates to complete the shape.
+Additionally, each <area> tag must have an href attribute, to specify the
+hyperlink’s URL target, and an alt attribute to specify alternative text to be
+displayed when images are not enabled.
+TOPIC3map.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Image Map Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert an image and map element:
+<img src=”search.png” alt=”Search” usemap=”#search”>
+<map name=”search”> <!-- Areas to go here --> </map>
+4. Within the map element, define a rectangular hot spot covering the top left
+quarter of the image – from a top left point at x,y:0,0 to a bottom right point at
+x,y:200,100:
+<area shape=”rect” coords=”0,0,200,100”
+	href=”http://www.bing.com”
+	alt=”Bing Panel” title=”Link to Bing”>
+5. Now, in the map element, define three hot spots of the same size covering the
+other three quarters of the image:
+<area shape=”rect” coords=”200,0,400,100”
+	href=”http://www.ask.com”
+	alt=”Ask Panel” title=”Link to Ask”>
+<area shape=”rect” coords=”0,100,200,200”
+	href=”http://www.google.com”
+	alt=”Google Panel” title=”Link to Google”>
+<area shape=”rect” coords=”200,100,400,200”
+	href=”http://www.yahoo.com”
+	alt=”Yahoo Panel” title=”Link to Yahoo”>
+6. Save the HTML document, then open the web page in your browser to see the
+tooltips describe each hot spot that you can follow to open its associated target
+resource.
+Do not leave any spaces in the comma-separated list of coordinates.
+search.png
+400px x 200px
+Validation will fail unless each <area> tag includes an alt attribute.
+
+	Generating popups
+Hyperlinks can also be used without an actual target resource to perform both CSS
+rollovers and “popup” effects. Typically, the hyperlink’s <a> anchor tag href
+attribute will specify a #null value in this case. The CSS a:hover pseudo-class
+can create hot spots – much like the image map hot spots in the previous example.
+In response, the style rules can reveal previously hidden HTML elements to be
+displayed as popups in front of other content. These are useful to display
+additional graphical or text content.
+TOPIC3popup.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>PopUp Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3popup.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a paragraph containing hyperlinks with nested
+image elements:
+<p id=”models”>
+<a href=”#null”>Cayman
+<img class=”pop” src=”cayman.png” alt=”Cayman”>
+</a>
+<a href=”#null”>Boxster
+<img class=”pop” src=”boxster.png” alt=”Boxster”>
+</a>
+<a href=”#null”>Carrera
+<img class=”pop” src=”carrera.png” alt=”Carrera”>
+</a>
+</p>
+4. Next, in the body, insert a paragraph containing text:
+<p>
+Porsche doesn’t simply build sports cars.<br>Porsche is more. Much more. And
+Porsche is different.
+</p>
+Specifying a value of just “#” to a hyperlink’s href attribute targets the top
+of that document.
+TOPIC3popup.css
+5. Save the HTML document, then create a style sheet that removes browser
+defaults and initially hides the images:
+* {margin: 0; padding: 0; border: 0;}
+img.pop
+{position: absolute; top: 20px; left: 190px;
+padding: 15px; visibility: hidden; height: 0px;}
+6. Next, add rules to size and position both paragraphs:
+p {width: 150px; float: left; margin: 20px 0 0 20px;}
+7. Now, add rules to style the hyperlinks:
+p #models a {
+	display: block; padding: 5px; margin: 0 0 20px 0;
+	color: white; background: blue; text-decoration: none;}
+p #models a:hover {color: #FFF; background: #F00;}
+p #models a:hover img.pop {
+	border: 5px solid red; background: #FFF;
+	z-index: 10; visibility: visible; height: auto;}
+8. Save the style sheet, then open the web page in your browser and place the
+cursor over any hyperlink to see its associated image appear above the text
+paragraph.
+Notice that the foreground and background colors for the hyperlink’s hover state
+are specified using hexadecimal shorthand values for red and white.
+
+	Chapter 4 Summary
+• The HTML5 <a> </a> anchor tags are used to enclose hyperlinks within an HTML
+document.
+• An href attribute can be included in an <a> anchor tag to specify the URL of a
+target resource for that hyperlink.
+• Each hyperlink is sensitive to hover, active and visited states.
+• Hyperlinks can be accessed by a pointer, the tab key or a designated key
+specified by the <a> tag’s accesskey attribute.
+• An id attribute can be included in an element to create a fragment identifier
+that can become the target of a hyperlink.
+• When targeting a fragment, the hyperlink’s href attribute must specify the
+identifier name prefixed by a # hash character.
+• A hyperlink may target a resource via the http: protocol, or with other
+protocols such as javascript: and mailto:.
+• Rollover effects are performed by the CSS a:hover pseudo-class to swap images
+in response to cursor position.
+• A single image can target multiple hyperlink resources by adding an image map
+to specify an area for each hyperlink.
+• The <map> </map> tags enclose <area> elements, to define the areas of an image
+map, and a name attribute must be included in the <map> tag to specify a name for
+that map.
+• To use an image map, the <img> tag must include a usemap attribute specifying
+the map’s name prefixed by a # hash character.
+• Each <area> tag must include shape, coords, href and alt attributes and the
+shape may be a value of rect, circle or poly.
+• Hyperlinks can be used without resource targets to perform CSS effects by
+assigning a #null value to the <a> tag’s href attribute.
+• Popup effects can be performed by the CSS a:hover pseudo-class to reveal hidden
+content in response to cursor position.
+
+Chapter 5: Arranging Content Sections:
+	Proclaiming Headings
+HTML5 heading elements are created using <h1>, <h2>, <h3>, <h4>, <h5>, and <h6>
+tags. These are ranked in importance by their numeric value – where <h1> has the
+greatest importance, and <h6> has the least importance. Each heading requires a
+matching closing tag and should only contain heading text. Typically, the
+heading’s font size and weight will reflect its importance, but headings also
+serve other purposes. Heading elements should be used to implicitly convey the
+document structure by correctly sequencing them – so <h2> elements below a <h1>
+element, <h3> elements below a <h2> element, etc. This structure helps readers
+quickly skim through a document by navigating its headings. Search engine spiders
+may promote documents that have correctly sequenced headings as they can use the
+headings in their index. They assume headings are likely to describe their content
+so it is especially useful to include meta keywords from the document’s head
+section in the document’s headings. The <h1> element is by far the most important
+heading and should ideally appear only once to proclaim the document heading.
+Often this can be a succinct version of the document title. Below that, a number
+of <h2> headings can proclaim section headings for long documents. Each section
+might contain individual article headings within <h3> elements, followed by
+paragraph <p> elements containing the actual article content.
+TOPIC3heading.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Heading Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a main document heading:
+	<h1>Document Heading</h1>
+4. Next, within the body section, insert a section heading:
+	<h2>Section Heading</h2>
+5. Now, within the body section, insert some article headings followed by
+paragraphs containing the article content:
+	<h3>Article Heading</h3> <p>Article content...</p>
+	<h3>Article Heading</h3> <p>Article content...</p>
+6. Finally, add another section with two more articles:
+	<h2>Section Heading</h2>
+	<h3>Article Heading</h3> <p>Article content...</p>
+	<h3>Article Heading</h3> <p>Article content...</p>
+7. Save the HTML document, then open it in your web browser to see the headings
+and document structure.
+Never use heading elements for their font properties as these can be overridden by
+style sheet rules – always consider headings to represent structure.
+All screenshots throughout this chapter have added (unlisted) colored border
+styles to more clearly illustrate the page area occupied by the elements
+described.
+The document structure created by the sequenced headings is known as the document
+“outline”. Properly constructed outlines allow a part of the page, such as a
+single article, to be easily syndicated into another site. The outline for the
+document above is illustrated alongside.
+
+	Grouping headers
+Headings sometimes have a sub-heading or tagline. For example, a document heading
+could be marked up like this:
+	<h1>American Airlines</h1>
+	<h2>Doing What We Do Best</h2>
+Unfortunately, this would strictly require all subsequent headings to be <h3>
+down to <h6> – to maintain a correctly sequenced outline. Fortunately, HTML5
+provides a grouping solution with the <header> </header> element. This can be used
+to enclose both the heading and sub-heading, like this:
+<header>
+	<h1>American Airlines</h1>
+	<h2>Doing What We Do Best</h2>
+</header>
+Each document may contain multiple <header> elements, and each <header> element
+may contain headings <h1> down to <h6>. Complete headers may be enclosed in
+<header> </header> tags to include one or more headings along with other
+introductory items – such as a banner, logo, or a section’s table of contents.
+Typically, a <header> element will contain the document heading at the start of a
+page, but may also be used at the start of sections within a page to contain
+associated introductory items.
+TOPIC3header.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Header Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a main document heading:
+<header>
+	<!-- Banner image to go here -->
+	<h1>HTML5</h1>
+	<h2>Building better websites</h2>
+</header>
+4. Next, within the body section, insert a section and article:
+	<h2>Section Heading</h2>
+	<h3>Article Heading</h3> <p> Article Content...</p>
+5. Now, within the body section, insert a second section with a single article:
+<header>
+	<h1>CSS</h1>
+	<h2>Cascading Style Sheets</h2>
+</header>
+	<h3>Article Heading</h3> <p>Article content...</p>
+6. Finally, insert a logo into the main document heading:
+<header>
+	<img src=”banner.png” width=”550” height=”72” alt=”Banner”>
+	<h1>HTML5</h1>
+	<h2>Building better websites</h2>
+</header>
+7. Save the HTML document, then open it in your web browser to see the grouped
+headings and document header.
+The <header> element is not required for headings in a simple document – it is
+only needed to group together multiple items.
+You cannot nest <header> elements, one within another, or place them within a page
+footer.
+
+	Providing navigation
+Groups of hyperlinks on an HTML5 web page, which enable the user to navigate
+around the page or website, should be enclosed between <nav> </nav> tags. This may
+typically be a horizontal menu in the document header, or a vertical menu down the
+edge of the page. Note that the <nav> element is simply a wrapper around the menu
+– it does not replace any structural elements.
+TOPIC3nav.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Navigation Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3nav.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body, insert a header containing a logo, document heading, and
+horizontal page navigation menu:
+<header>
+<img id=”logo” src=”logo.png” alt=”Logo”>
+<h1>Building better websites</h1>
+<nav id=”horizontal”>
+<p>
+<a href=”#html”>Markup</a> |
+<a href=”#js”>Scripting</a> |
+<a href=”#css”>Style Sheets</a> </p>
+</nav>
+</header>
+4. Next, in the body, insert a vertical site navigation menu:
+<nav id=”vertical”>
+<p>Further Reading<br>In Easy Steps:
+<br><br> <a href=”js.html”>JavaScript</a>
+<br><br> <a href=”css.html”>CSS</a> </p>
+</nav>
+5. Now, add regular content then save the HTML document
+<h2 id=”html”>HTML5</h2> <p>All about markup...</p>
+<h2 id=”js”>JavaScript</h2><p>All about scripting...</p>
+<h2 id=”css” >CSS</h2> <p>All about stylesheets...</p>
+Not every group of hyperlinks is eligible to be contained in a <nav> element –
+only those that provide page-wide or site-wide navigation.
+TOPIC3nav.css
+6. Create a style sheet to position the logo image and navigation menus:
+#logo {float: left;}
+#horizontal {padding-left: 100px; display: block;}
+#vertical {float: left; padding: 0px 30px 130px 30px;}
+7. Save the HTML document and style sheet, then open the web page in your
+browser and try out the navigation links.
+It is popular to create vertical navigation menus as unordered lists.
+
+	Writing articles
+In HTML5, all content within the <body> element is considered to be part of a
+“section”. Within the main section, defined by the <body> element, section limits
+are defined implicitly by correctly sequenced headings in the document outline.
+Section limits may also be defined explicitly by placing content within the
+<header>, <nav>, <section> and <article> elements, plus the <aside>, and <footer>
+elements demonstrated over the next few pages.
+Remember that an <article> contains a stand-alone composition, but a <section> is
+just a grouping element.
+General content within the document body, which is not part of a special content
+element such as <nav>, can be arranged in sections between <section> </section>
+tags. Each section will typically begin with its own heading element, followed by
+articles. Each article should be enclosed between <article> </article> tags and
+will typically begin with its own heading element followed by one or more
+paragraphs. In understanding the <section> and <article> elements, it helps to
+consider the way a newspaper contains various sections – news, sport, real estate,
+and so on. Each section contains various articles.
+TOPIC3section.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Section Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+3. Within the body, insert a main document heading:
+	<h1>Newspaper</h1>
+4. Next, in the body, insert two section elements:
+	<section>
+		<!-- Articles to go here -->
+	</section>
+	<section>
+		<!-- Articles to go here -->
+	</section>
+5. Within the first section element, insert a section heading:
+	<h2>News Section</h2>
+6. Now, insert a section heading in the second section element:
+	<h2>Sport Section</h2>
+7. After the heading in each section, add two articles that each contain an
+article heading and a single paragraph:
+<article>
+	<h3>Article #1</h3>
+	<p>Article content...</p>
+</article>
+<article>
+	<h3>Article #2</h3>
+	<p>Article content...</p>
+</article>
+8. Save the HTML document, then open it in your browser to see the article content
+displayed in sections.
+A lengthy <article> could even contain nested <section> elements, each containing
+nested <article> elements.
+The document, section, and article headings appear correctly nested in the
+document outline.
+
+	Standing aside
+HTML5 usefully provides <aside> </aside> tags that can be nested within an
+<article> element in order to incorporate content that is somewhat related to the
+main content of that article. These allow for supplemental, yet separate, content
+to be included – typically displayed as a sidebar or footnote.
+Content within an <aside> element should be stand-alone information that is
+related to the article, such as pull-quotes extracted from an affiliated article,
+a glossary of terms used within the article, or even hyperlinks to pages providing
+further reading associated with the article. Alternatively, the <aside> element
+can be used alone, without an <article> element, to contain secondary content that
+is related to the entire page, such as related advertising or a blogroll.
+TOPIC3aside.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Aside Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3aside.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body, insert a main document heading:
+<h1>Famous Quotes</h1>
+4. Next, within the body, insert an article containing a heading, a paragraph, and
+an aside element:
+<article>
+	<h2>Cynicism</h2>
+	<p>
+		<q>A cynic is a man who knows the price of everything<br>
+			but the value of nothing. </q> <br>
+		<cite>Oscar Wilde</cite>
+	</p>
+	<aside>Oscar Wilde (1854 - 1900)<br>
+	was an Irish writer and poet.</aside>
+</article>
+Avoid using the <aside> element to contain unrelated advertising.
+5. Now, within the body, insert a second article containing a heading, a
+paragraph, and an aside element:
+<article>
+	<h2>Happiness</h2>
+	<p>
+		<q>The secret of happiness is not in doing what one likes, but in
+			liking what one has to do.</q> <br>
+		<cite>James M. Barrie</cite>
+	</p>
+	<aside>James M. Barrie (1860 - 1937)<br>
+	was a Scottish author and dramatist.</aside>
+</article>
+6. Insert an attribute into the opening tag of the first article element so it can
+be selected for sidebar styling:
+<article class=”sidebar”>
+TOPIC3aside.css
+7. Create a style sheet to control the position of the paragraph and aside element
+in the first article:
+article.sidebar > p,aside {
+	display: table-cell; padding-right: 20px;
+			}
+8. Save the HTML document and the style sheet, then open the web page in your
+browser to see how the asides appear.
+Do not use the <aside> element to contain navigation hyperlinks – those should
+always be contained inside a <nav> element.
+
+	Footing the page
+Just as each HTML5 document may contain multiple headings, for the document,
+sections and articles, they may also contain multiple footers for the document,
+sections and articles. The content of each footer is contained between
+<footer> </footer> tags and provides information about that part of the document.
+Typically, a <footer> element might contain the author’s name, the author’s
+contact details within an <address> element, or copyright and legal disclaimers
+within a <small> element.
+Like a <header> element, a <footer> element can also contain hyperlinks for page
+and site navigation within a nested <nav> element. Hyperlinks to related
+documents, however, are better placed in an <aside> element within the section or
+article.
+TOPIC3footer.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Footer Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3footer.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body, insert a main document heading:
+	<h1 id=”top”>Interesting Articles</h1>
+4. Next, within the body, just before its closing tag, insert a document footer
+containing page navigation hyperlinks:
+<footer id=”page”>
+	<nav>
+		<a href=”#art-1”>Sally’s Article</a> -
+		<a href=”#art-2”>Terry’s Article</a> -
+		<a href=”#top”>Top of Page</a>
+	</nav>
+</footer>
+5. Next, within the document footer, insert copyright details:
+<small> Copyright &copy; Example Corporation </small>
+The HTML5 <aside> and <nav> elements may also each contain a <footer> element.
+6. Now, within the body, between the document heading and document footer, insert
+two articles that each contain an article heading, a paragraph, and an article
+footer:
+<article>
+	<h2 id=”art-1”>Sally’s Article</h2>
+	<p>Article content...</p>
+	<footer>
+		<address>jonnygrealish64@gmail.com</address>
+	</footer>
+</article>
+<article>
+	<h2 id=”art-2”>Terry’s Article</h2>
+	<p>Article content...</p>
+	<footer>
+		<address>terry@example.com</address>
+	</footer>
+</article>
+TOPIC3footer.css
+7. Create a style sheet to control the position of the page footer contents:
+footer #page {margin-top: 20px;}
+8. Save the HTML document and the style sheet, then open the web page in your
+browser to see how the footers appear.
+<section> elements are not required in short documents like this one – unless you
+particularly want to add section headings and footers.
+
+	Positioning content
+Just as HTML provides a <header> element to group together related items at the
+top of the page, and a <footer> element to group together related items at the
+bottom of the page, it also provides a <main> element to group together related
+items that form the body content of the page. A <main> element can contain any
+kind of content that is not related to the page header or footer information.
+For example, sections, articles, paragraphs, sidebar notes, images, etc.
+The <main> tag is a new element introduced in HTML 5.1. Using the <main> element
+in combination with the elements introduced throughout this chapter, the document
+header, main content and footer can be positioned in a logical structure:
+TOPIC3position.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Position Example</title>
+	<link type="text/css "rel=”stylesheet” href=”TOPIC3position.css”
+			media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body, insert a document header:
+<header>
+	Header Area<br>
+	<h1>Document Heading</h1>
+	<nav>Navigation Area</nav>
+</header>
+4. Next, within the body, insert the main content element:
+<main>Main Area<br>
+<!-- Sections to go here -->
+</main>
+5. Now, within the main content element, insert two sections:
+<section>
+	<h2>Section Heading</h2>
+	<!-- Articles to go here -->
+</section>
+<section>
+	<h2>Section Heading</h2>
+<!-- Articles to go here -->
+</section>
+The navigation area could provide either horizontal or vertical links to other
+pages.
+6. Then within each section, insert two articles:
+<article>
+	<h3>Article Heading</h3>
+	<p>Paragraph</p>
+	<p>Paragraph</p>
+</article>
+<article>
+	<h3>Article Heading</h3>
+	<p>Paragraph</p>
+	<p>Paragraph</p>
+</article>
+TOPIC3position.css
+7. Finally, within the body, insert a document footer:
+<footer>
+	<h2>Footer Area</h2>
+</footer>
+8. Create the style sheet to add borders and color to each element, then save the
+HTML document and style sheet and open the page in your browser to see the
+structure.
+Always use white page backgrounds, as colored backgrounds can make content
+difficult to read.
+
+	Denying anonymity
+The dividing <div> </div> tags, which were used widely in earlier versions of
+HTML, continue to be supported in HTML5 for backward-compatibility – but the <div>
+element should only now be used as a last resort, when no other element is
+suitable. Unlike other meaningful elements such as <header>, <main>, <section>,
+<article>, <nav> and <footer>, the meaningless <div> element is anonymous. For
+example, a smart browser might have a shortcut key to jump to the page’s
+navigation section. This section is easily identifiable when contained in a
+meaningful <nav> element, but not so when contained in a meaningless <div>
+element. Only use the <div> element as a last resort, because it has no meaning –
+always look for a meaningful element to use instead. The <div> element remains
+useful for styling purposes, as do the similarly anonymous <span> </span> tags.
+Although the <div> and <span> elements are meaningless alone, they can include an
+identifying attribute to wrap content that is to be styled alike. Documents that
+use the <div> element for structural, rather than stylistic purposes should be
+edited to use meaningful elements instead. For example, given the body
+section elements below:
+TOPIC3division.html
+<div class=”header”>
+<h1>Web Languages</h1>
+</div>
+<div class=”nav”>
+<h2>Menu</h2>
+<p><a href=”js.html”>JavaScript</a></p>
+<p><a href=”css.html”>Cascading Style Sheets</a></p>
+</div>
+<div class=”main”>
+<h2>HyperText <span>Markup</span> Language</h2>
+<p>All about HTML...</p>
+<h2>eXtensible <span>Markup</span> Language</h2>
+<p>All about XML...</p>
+</div>
+<div class=”footer”>
+<p><small>Copyright &copy; Example Corporation</small></p>
+</div>
+It should hopefully be obvious from these class attribute values that each
+anonymous <div> element can be easily replaced by more meaningful <header>, <nav>,
+<main> and <footer> elements.
+1. Replace the “header” class <div> with a <header> element:
+<header>
+	<h1>Web Languages</h1>
+</header>
+2. Replace the “nav” class <div> with a <nav> element:
+<nav>
+	<h2>Menu</h2>
+	<p><a href=”js.html”>JavaScript</a></p>
+	<p><a href=”css.html”>Cascading Style Sheets</a></p>
+</nav>
+3. Replace the “main” class <div> with <main> and <article> elements:
+<main>
+<article>
+	<h2>HyperText <span>Markup</span> Language</h2>
+	<p>All about HTML...</p>
+</article>
+<article>
+	<h2>eXtensible <span>Markup</span> Language</h2>
+	<p>All about XML...</p>
+</article>
+</main>
+4. Replace the “footer” class <div> with a <footer> element:
+<footer>
+	<p>
+	<small>Copyright &copy; Example Corporation</small>
+	</p>
+</footer>
+5. Save the document, then open it in your browser to see it appears the same –
+but it now has meaningful structure.
+Also amend any associated style sheet to select the new elements.
+
+	Chapter 5 Summary
+• Heading elements <h1>, <h2>, <h3>, <h4>, <h5> and <h6> are ranked in order of
+importance from <h1> down to <h6>.
+• Correctly sequenced heading elements implicitly convey the document structure,
+to create the document outline.
+• Complete headers, including a logo and headings <h1> to <h6> can be enclosed in
+a <header> element.
+• Groups of hyperlinks providing page or site navigation should be enclosed within
+a <nav> element.
+• A <nav> element is just a wrapper around a menu, typically displayed
+horizontally in the header or vertically in a sidebar.
+• Section limits are explicitly defined in a document outline when content is
+placed within <header>, <nav>, <section>, <article>, <aside> and <footer>
+elements.
+• Each document <section> element will typically begin with a section heading,
+followed by one or more articles.
+• Each document <article> element will typically begin with an article heading,
+followed by one or more paragraphs.
+• Stand-alone information related to an article can be enclosed within an <aside>
+element nested in an <article> element.
+• Typically, a <footer> element might contain contact details in an <address>
+element or legal details in a <small> element.
+• A <main> element can be used as a wrapper around all body content that is not
+related to header or footer information.
+• The anonymous <div> and <span> elements are best avoided for structural
+purposes, but are useful for styling purposes.
+
+Chapter 6: Writing Lists and Tables:
+	Creating unordered lists
+Unordered lists, where the sequence of list items is not important, typically
+place a bullet-point before each item to differentiate list items from regular
+text.
+In HTML5, unordered lists are created with <ul> </ul> tags, which provide a
+container for list items. Each list item can be created using <li> </li> tags to
+enclose the item, or optionally just using <li> to precede the item – either form
+of <li> element validates as correct HTML. An unordered list <ul> element can
+contain numerous list item <li> elements.
+The bullet point that differentiates unordered list items from regular text may be
+one of these three marker types:
+• Disc – a filled circular bullet-point (the default style).
+• Circle – an unfilled circular bullet-point.
+• Square – a filled square bullet-point.
+A style rule can specify any one of the above values to the unordered list’s
+list-styletype property, or a none value can be specified to that property to
+suppress bulletpoints.
+Each HTML list also has a list-style-image property that can specify the URL of
+an image to be used as the list’s bullet-point. This will appear in place of any
+of the marker type bullet-points. Where the web browser cannot use the specified
+image, the marker specified to its list-style-type property will be used, or when
+no marker has been specified, the default will be used.
+TOPIC3ulist.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Unordered List Example</title>
+	<link type="text/css "rel=”stylesheet” href=”TOPIC3ulist.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert four copies of this complete unordered list,
+with no specified class name:
+<ul class="">
+	<li>JavaScript</li>
+	<li>Cascading Style Sheets</li>
+	<li>C Programming</li>
+</ul>
+4. Now, edit each list in turn to provide a class name:
+<ul class="disc-bullets">
+<ul class="circle-bullets">
+<ul class="square-bullets">
+<ul class="image-bullets">
+5. Next, make the final list into a site navigation menu, by enclosing it within
+a <nav> element and making each list item into a hyperlink:
+<nav>
+	<ul class=” image-bullets”>
+		<li><a href=”script.html”>JavaScript</a></li>
+		<li><a href=”style.html”>Cascading Style Sheets</a></li>
+		<li><a href=”program.html”>C Programming</a></li>
+	</ul>
+</nav>
+TOPIC3ulist.css
+6. Create a style sheet to position each list and to specify their individual
+bulletpoint styles:
+ul.disc-bullets {list-style-type: disc; float: left;}
+ul.circle-bullets {list-style-type: circle; float: left;}
+ul.square-bullets {list-style-type: square; float: left;}
+ul.image-bullets {list-style-image: url(go.png); clear: both;}
+go.png 21x21px
+7. Save the HTML document and style sheet, then open the web page in your
+browser to see the list bullet points.
+Note that in CSS terms, the lists are written in a content box with their
+bullet-points drawn in its left padding area.
+
+	Creating ordered lists
+Ordered lists, where the sequence of list items is important, number each item to
+differentiate list items from regular text.
+When no numbering type has been specified, the default will be used.
+In HTML5, ordered lists are created with <ol> </ol> tags, which provide a
+container for list items. As with unordered lists, each list item can be created
+using <li> </li> tags to enclose the item, or optionally just using <li> to
+precede the item – either form of <li> element validates as correct HTML. An
+ordered list <ol> element can contain numerous list item <li> elements.
+The automatic numbering that differentiates ordered list items from regular text
+may be one of these six numbering types:
+• Decimal – traditional numerals (the default style).
+• Roman – classical numerals.
+• Latin – traditional alphabetical lettering.
+• Greek – classical alphabetical lettering.
+• Georgian – traditional Georgian numbering.
+• Armenian – traditional Armenian numbering.
+A style rule can specify any of the above numbering types to the list’s
+list-style-type property with the following values:
+Decimal: decimal or decimal-leading-zero
+Roman: lower-roman or upper-roman
+Latin: lower-latin or upper-latin
+	lower-alpha or upper-alpha
+Greek: lower-greek
+Georgian: georgian
+Armenian: armenian
+Additionally, a none value can be specified to suppress numbering. List item
+numbering will normally begin at one, but a different start point can be specified
+to a start attribute in the <ol> tag.
+As with the markers in unordered lists, numbering is drawn in the left padding
+area of the list’s content box.
+TOPIC3olist.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Ordered List Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3olist.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert three ordered lists:
+<ol id=”list-1”>
+	<li>Cheetah</li>
+	<li>Pronghorn Antelope</li>
+	<li>Blue Wildebeest</li>
+</ol>
+<ol id=”list-2”>
+	<li>Lion</li>
+	<li>Springbok</li>
+	<li>Brown Hare</li>
+</ol>
+<ol id=”list-3”>
+	<li>Nile</li>
+	<li>Amazon</li>
+	<li>Mississippi</li>
+</ol>
+4. Now, edit the second list to begin numbering at four:
+<ol id=”list-2” start=”4”>
+TOPIC3olist.css
+5. Create a style sheet to position the lists and to specify how the items should
+be numbered:
+ol {display: table-cell;}
+ol#list-2 {padding-right: 20px;}
+ol#list-3 {list-style-type: upper-roman;
+	padding-left: 50px; border-left: 3px dashed black;}
+6. Save the HTML document and style sheet, then open the web page in your
+browser to see the list numbering.
+
+	Creating definition lists
+A definition list is a unique type of list in which each list item has two parts –
+the first part being a term, and the second part being a description of the term
+in the first part.
+This is referred to as a name/value pair. For example, a name/value pair for the
+term “sun” could be “sun/the star at the center of our solar system”.
+In HTML5, definition lists are created with <dl> </dl> tags, which provide a
+container for list items. Each list item term is contained between <dt> </dt>
+definition term tags, and each list item description is contained between
+<dd> </dd> definition description tags. Optionally, the </dt> and </dd> closing
+tags may be omitted – either form of <dt> and <dd> element is valid.
+Each list item in a definition list can contain multiple <dt> definition term
+elements and multiple <dd> definition description elements – to allow a single
+term to have multiple descriptions, or multiple terms to have a single
+description.
+Typically, browsers display the definition descriptions inset from their terms.
+Definition lists are also useful to contain a series of questions and related
+answers, or indeed any other groups of name/value data.
+TOPIC3dlist.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Definition List Example</title>
+	<link type="text/css "rel=”stylesheet” href=”TOPIC3dlist.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a definition list containing two question and
+answer name/value pairs:
+<dl>
+	<dt>What is HTML5?</dt>
+	<dd>The latest HyperText Markup Language</dd>
+	<dt>When can I use it?</dt>
+	<dd>Right now.</dd>
+</dl>
+4. Next, in the body section, insert a second definition list containing two list
+items that each have multiple descriptions – describing the use, pronunciation,
+and meaning of their term:
+<dl>
+	<dt><dfn>Homonym</dfn></dt>
+	<dd class=”grammar”>noun</dd>
+	<dd class=”spoken”>[hom-uh-nim]</dd>
+	<dd>a word the same as another in sound and spelling but different in
+		meaning</dd>
+	<dt><dfn>Mouse</dfn></dt>
+	<dd class=”grammar”>noun</dd>
+	<dd class=”spoken”>[mous]</dd>
+	<dd>a small animal of various rodent families</dd>
+	<dd>a palm-sized button-operated device used to move a computer
+		cursor</dd>
+	<dd>a quiet, timid person</dd>
+</dl>
+TOPIC3dlist.css
+5. Create a style sheet to color the question and definition terms in the lists,
+and to color some specific descriptions:
+dt {color: blue;}
+dfn {color: red; font-size: 20pt;}
+dd.grammar {color: green;}
+dd.spoken {color: blue;}
+6. Save the HTML document and style sheet, then open the web page in your
+browser to see the name/value pairs.
+The <dt> element alone does not indicate that its content is a term being
+defined – a nested <dfn> element must be used for that purpose.
+Do not use a definition list to mark up dialog – use paragraphs to mark up each
+piece of dialog instead.
+
+	Producing a simple table
+Data is often best presented in tabular form, arranged in rows and columns to
+logically group related items, so it is easily understood.
+Omit the closing </td> cell tags but include the closing </tr> tags to more
+clearly denote the end of each table row.
+In HTML5, tables are created with <table> </table> tags, which provide a container
+for table rows. Each table row is created with <tr> </tr> tags, which provide a
+container for a line of table data cells. Each table data cell is created with
+<td> </td> tags, which enclose the actual data to be presented. Optionally, the
+</td> and </tr> closing tags may be omitted – either form of <td> and <tr>
+element is valid.
+A <table> element will typically contain numerous <tr> elements to create a table
+displaying multiple rows of data. Similarly, each <tr> element will typically
+contain numerous <td> elements to create a table of multiple columns of data. It
+is important to note, however, that each <tr> row in the table must contain the
+exact same number of <td> cells – so, for example, if the first <tr> row contains
+five <td> cells, all <tr> rows must contain five <td> cells.
+TOPIC3table.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Table Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3table.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a table element that includes an identity for
+styling purposes:
+<table id=”data”>
+	<!-- Table rows to go here -->
+</table>
+4. Now, within the table element, insert three rows that each contain three
+table data cells:
+<tr> <td>Cell 1.1 <td>Cell 1.2 <td>Cell 1.3 </tr>
+<tr> <td>Cell 2.1 <td>Cell 2.2 <td>Cell 2.3 </tr>
+<tr> <td>Cell 3.1 <td>Cell 3.2 <td>Cell 3.3 </tr>
+TOPIC3table.css
+5. Create a style sheet to set the table width and font, and also to add borders
+to the table, its cells, and its headings:
+table #data{width: 580px; font-family: sans-serif;
+	border: 5px solid black;}
+table #data td, th {border: 1px solid black;}
+6. Save the HTML document and style sheet, then open the web page to see this
+simple table.
+If a <caption>: element is to be included, it must immediately follow the opening
+<table> tag.
+A table title can be specified with <caption> </caption> tags and row and column
+headings can be added between <th> </th> tags.
+7. Immediately following the opening table tag, insert a caption title and a new
+row of four column headings:
+<caption>A Simple Table</caption>
+<tr><th><th>Column 1<th>Column 2<th>Column 3</tr>
+8. Finally, insert a row heading at the start of each following row, then save
+the HTML document to view the additions:
+<tr><th>Row 1<td>Cell 1.1<td>Cell 1.2<td>Cell 1.3</tr>
+<tr><th>Row 2<td>Cell 2.1<td>Cell 2.2<td>Cell 2.3</tr>
+<tr><th>Row 3<td>Cell 3.1<td>Cell 3.2<td>Cell 3.3</tr>
+The closing </th> tag is optional but the number of opening <th> headings must
+exactly match the number of rows and columns.
+
+	Spanning cells over rows
+An individual table cell can be combined with others vertically to span down over
+multiple rows of a table. The number of rows to be spanned is specified to a
+rowspan attribute in the spanning cell’s <td> tag. Cells in the rows being spanned
+must then be removed to maintain the table symmetry.
+TOPIC3rowspan.html
+1. Make a copy of the TOPIC3table.html document, created in the previous example,
+and rename it “TOPIC3rowspan.html”
+2. Change the document and table titles:
+<title>Row Spanning Example</title>
+<caption>A Table Spanning Rows</caption>
+3. In the table data element containing the text “Cell 1.1”, insert an attribute
+in its opening tag and edit its content:
+<td rowspan=”2”>Cell 1.1+2.1</td>
+4. Now, delete the table data element containing the text “Cell 2.1” – as this
+cell is now spanned.
+5. Save the HTML document, then open the TOPIC3rowspan.css style sheet and add
+rules to style cells spanning rows:
+table#data td[rowspan=”2”] {background: yellow;}
+table#data td[rowspan=”3”] {background: aqua;}
+6. Save the style sheet then open the web page in your browser to see the cell
+spanning two rows in Column 1.
+7. Reopen the HTML document, then insert an attribute into the table data element
+containing the text “Cell 2.2” and edit its content:
+<td rowspan=”2”>Cell 2.2+3.2</td>
+8. Now, delete the table data element containing the text “Cell 3.2” – as this
+cell is now spanned.
+9. Save the amended HTML document, then open it in your browser to see the cell
+spanning two rows in Column 2.
+10. Reopen the HTML document once more, then insert an attribute into the table
+data element containing the text “Cell 1.3” and edit its content:
+<td rowspan=”3”>Cell 1.3+2.3+3.3</td>
+11. Now, delete the table data elements containing the text “Cell 2.3” and
+“Cell 3.3” – as these cells are now spanned.
+12. Save the amended HTML document, then open it in your browser to see the cell
+spanning three rows in Column 3.
+Insert tab spaces between all table data elements in the HTML code to align them
+so it’s easier to configure the table layout.
+Notice that by default, text in each cell is left-aligned and horizontally
+centered in merged cells.
+
+	Spanning cells across columns
+An individual table cell can be combined with others horizontally to span to the
+right across multiple columns of a table. The number of columns to be spanned is
+specified to a colspan attribute in the spanning cell’s <td> tag. Cells in the
+columns being spanned must then be removed to maintain table symmetry.
+TOPIC3colspan.html
+1. Make a copy of the table.html document, created here, and rename it
+“TOPIC3colspan.html”
+2. Change the document and table titles:
+<title>Column Spanning</title>
+<caption>A Table Spanning Columns</caption>
+3. In the table data element containing the text “Cell 1.1”, insert an attribute
+in its opening tag and edit its content:
+<td colspan=”2”>Cell 1.1+1.2</td>
+4. Now, delete the table data element containing the text “Cell 1.2” – as this
+cell is now spanned.
+TOPIC3colspan.css
+5. Save the HTML document, then re-open the TOPIC3colspan.css style sheet and add
+rules to style cells spanning columns:
+table#data td[colspan=”2”] {background: aqua;}
+table#data td[colspan=”3”] {background: yellow;}
+6. Save the style sheet, then open the web page in your browser to see the cell
+spanning two columns on Row 1.
+7. Reopen the HTML document, then insert an attribute into the table data element
+containing the text “Cell 2.1”:
+<td colspan=”3”>Cell 2.1+2.2+2.3</td>
+8. Now, delete the table data elements containing the text “Cell 2.2” and
+“Cell 2.3” – as these cells are now spanned.
+9. Save the amended HTML document, then open it in your browser to see the cell
+spanning three columns on Row 2.
+10. Reopen the HTML document once more, then insert another attribute into the
+table data element containing the text “Cell 2.1+2.2+2.3” and edit its content:
+<td colspan=”3” rowspan=”2”>Cell 2.1+2.2+2.3+3.1+3.2+3.3</td>
+11. Now, delete the table data elements containing the text “Cell 3.1”, “Cell 3.2”
+and “Cell 3.3” – cells now spanned.
+12. Save the amended HTML document, then open it in your browser to see the cell
+span three columns and two rows.
+Combined spans are rectangular – they cannot span an L-shape.
+Column spanning and row spanning can be combined to create large rectangular
+blocks of cells extending over multiple columns and across multiple rows
+
+	Adding a header and footer
+Tables can be enhanced by the addition of special header and footer rows, above
+and below the regular table content, which provide additional table information.
+In HTML5, table header information is contained between <thead> </thead> tags
+and table footer information is contained between <tfoot> </tfoot> tags. When a
+table has a <thead> and/or a <tfoot> element, all regular table rows must be
+enclosed between <tbody> </tbody> tags.
+In long tables, rows can be grouped into separate table body sections using
+multiple <tbody> elements. When these are printed, each paper page can repeat the
+table header and footer information.
+It is important to note that both the <thead> and <tfoot> elements must appear
+before the first <tbody> element within the <table> element, but after the
+<caption> element if one is present.
+TOPIC3enhance.html
+1. Make a copy of the table.html document, created here, and rename it
+“TOPIC3enhance.html”
+2. Change the document and table titles:
+<title>Enhanced Table</title>
+<caption>An Enhanced Table</caption>
+3. Immediately after the caption, insert a table header containing a single row
+that spans all four columns:
+<thead>
+<tr><td colspan=”4”>Header Information</tr>
+</thead>
+4. Immediately after the header, insert a table footer containing a single row
+that spans all four columns:
+<tfoot>
+<tr><td colspan=”4”>Footer Information</tr>
+</tfoot>
+5. After the footer, add a table body element to enclose all the regular existing
+table rows:
+<tbody>
+	<!-- Existing row elements go here -->
+</tbody>
+6. After the table body element, insert a second table body element containing
+four more table rows:
+<tbody>
+<tr><th colspan=”4” class=”next”>Next section</tr>
+<tr>
+<th>Row 4<td>Cell 4.1<td>Cell 4.2<td>Cell 4.3</tr>
+<tr>
+<th>Row 5<td>Cell 5.1<td>Cell 5.2<td>Cell 5.3</tr>
+<tr>
+<th>Row 6<td>Cell 6.1<td>Cell 6.2<td>Cell 6.3</tr>
+</tbody>
+TOPIC3enhance.css
+7. Save the HTML document, then reopen the TOPIC3enhance.css style sheet and add
+rules to style the table header, the second table body heading, and the table
+footer:
+table#data thead {background: aqua;}
+table#data th.next {background: yellow;}
+table#data tfoot {background: lime;}
+8. Save the style sheet, then open the web page in your browser to see the
+enhanced table.
+Table headers and footers should only contain information – all table data should
+appear in the table body.
+
+	Aligning cell content
+Typically, the default alignment of content in a <td> table data cell is
+horizontally leftaligned and vertically centered, whereas content in a <th> table
+heading cell is generally centered both horizontally and vertically. These
+defaults may be overridden by style rules, however, to align content horizontally
+and vertically.
+A table cell’s text-align property can specify values of left, center or right to
+align horizontally, and its vertical-align property can specify values of top,
+middle or bottom to align vertically.
+Alignment rules may be specified for <tr>, <tbody>, <thead> and <tfoot> elements
+to control the horizontal and vertical content position in groups of cells. All
+<td> and <th> elements they contain automatically inherit the specified alignment
+values.
+TOPIC3align.html
+1. Make a copy of the table.html document, created here, and rename it
+“TOPIC3align.html”
+2. Change the document and table titles:
+<title>Alignment Example</title>
+<caption>A Table With Aligned Content</caption>
+3. Now, edit each table row element to assign class names for styling content
+alignment:
+<tr class=”default”>
+	<th>Row 1<td>Cell 1.1<td>Cell 1.2<td>Cell 1.3</tr>
+<tr class=”center”>
+	<th>Row 2<td>Cell 2.1<td>Cell 2.2<td>Cell 2.3</tr>
+<tr class=”bottom right”>
+	<th>Row 3<td>Cell 3.1<td>Cell 3.2<td>Cell 3.3</tr>
+TOPIC3align.css
+4. Save the HTML document, then reopen the TOPIC3align.css style sheet and add
+rules to style cell content alignment, cell height, and background color:
+table#data tr.default td {height: 30px; background: yellow;}
+table#data tr.center td {text-align: center; height: 30px; background: aqua;}
+table#data tr.right td {text-align: right; height: 30px; background: lime;}
+table#data tr.bottom {vertical-align: bottom ;}
+5. Save the style sheet, then open the web page in your browser to compare the
+cell content alignment on each row.
+Table cells are automatically spaced apart at a fixed distance by default, but the
+cell spacing can be removed by a style rule specifying a collapse value to the
+table’s border-collapse property. The outer table border can be explicitly
+suppressed by a style rule specifying a none value to the table’s border property,
+and individual cell borders can be removed by a style rule specifying a value of
+zero to the cell’s border property.
+Notice that the final row aligns content to the bottom of each cell in both <th>
+and <td> elements, as they inherit the rule applied to that row’s <tr> element.
+6. Edit the TOPIC3align.html document to assign class names for styling the table
+element and the top left empty table cell:
+<table id=”data” class=”no-border”>
+	<tr><th class=”cut-border”>
+	<th>Column 1<th>Column 2<th>Column 3</tr>
+7. Reopen the TOPIC3align.css style sheet again and add rules to remove the table
+and top left cell borders, and cell spacing:
+table#data.no-border {
+	border-collapse: collapse; border: none;}
+table#data tr th.cut-border {
+	border: 0;}
+8. Save the HTML document and style sheet once more, then reopen the web page
+to see the borders removed.
+Cell and table borders can be removed or styled individually using their
+border-top, border-right, border-bottom, and border-left properties.
+It is particularly useful to remove the top left empty cell in tables without
+borders.
+
+	Grouping columns
+Table columns that contain similar data can be virtually grouped together for
+styling purposes with <colgroup> </colgroup> tags. The opening <colgroup> tag can
+specify the number of columns to include in that group to a span attribute.
+A <table> element can contain one or more <colgroup> elements to allow all the
+columns in a group to be styled alike, but have each group styled differently from
+other groups for contrast. These should appear at the start of the <table>
+element, immediately after the <caption> element, if one is present, but before
+<thead>, <tfoot>, <tbody> elements and table content.
+When the <colgroup> element includes a span attribute, to specify how many columns
+to include in that group, the closing </colgroup> tag is required, but the element
+must remain empty – with nothing between the <colgroup> </colgroup> tags.
+TOPIC3colgroup.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Column Grouping</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3colgroup.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a table element that includes an identity for
+styling purposes:
+<table id=”feb”>
+	<!-- Table content to go here -->
+</table>
+4. Within the table element, first insert a table caption title:
+<caption>Monthly Calendar</caption>
+5. Next, within the table element, insert elements grouping columns – with
+specified class names for styling each group:
+<colgroup span=”5” class=”weekday”></colgroup>
+<colgroup span=”2” class=”weekend”></colgroup>
+6. Now, within the table element, insert a table header and a table footer – each
+spanning seven columns:
+<thead>
+	<tr><th colspan=”7”>February 2021</tr>
+</thead>
+<tfoot>
+	<tr><th colspan=”7”>Birthday</tr>
+</tfoot>
+7. Finally, in the table element, insert a table body containing seven columns,
+with one cell given an identity for styling:
+<tbody>
+	<tr><td>Mon<td>Tue<td>Wed<td>Thu
+	<td>Fri<td>Sat<td>Sun
+	<tr><td>1<td>2<td>3<td>4
+	<td>5<td>6<td>7<tr><td>8<td>9<td>10<td>11
+	<td>12<td>13<td>14<tr><td>15<td>16<td>17
+	<td>18<td>19<td>20<td id=”birthday”>21<tr>
+	<td>22<td>23<td>24<td>25<td>26<td>27<td>28
+</tbody>
+TOPIC3colgroup.css
+8. Create a style sheet to color the column groups, remove cell spacing, and
+highlight the header, footer, and one cell:
+table#feb colgroup.weekday {background: aqua;}
+table#feb colgroup.weekend {background: yellow;}
+table#feb {width: 580px; border-collapse: collapse;}
+table#feb thead, tfoot {background: white; color: red;}
+table#feb tbody {text-align: center;}
+table#feb tbody tr td#birthday {border: 2px solid red;}
+9. Save the HTML document and style sheet, then open the web page in your browser
+to see how the column groups are clearly distinct from each other.
+The table body in this example omits the optional </td> and </tr> closing tags to
+save page space, but including the </tr> tags more clearly denotes each row end.
+
+	Setting column widths
+Where a table simply has an overall width specified by a style rule, the browser
+will, by default, calculate the width of each column according to its content –
+columns with broad content will be wider than columns with slender content.
+Greater control over column width can be achieved using <col> tags to represent
+individual columns so rules can specify their size and appearance.
+The <col> tag is a single tag – it does not have a matching closing tag.
+A single <col> element can also represent multiple columns by including a span
+attribute to specify a number of columns. So a style rule specifying a column
+width will be applied to all the columns that <col> element represents.
+Optionally, <col> elements may be enclosed between <colgroup> </colgroup> tags to
+allow styling of both column groups and individual columns.
+TOPIC3column.html
+1. Start with the HTML5 document type declaration
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Column Styling</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3column.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a table element that includes an identity for
+styling purposes and a caption:
+<table id=”jfk”>
+	<caption>Breakfast Flights</caption>
+	<!-- Table content to go here -->
+</table>
+4. Next, in the table, insert a column group that includes a class name for
+styling and contains a single column:
+<colgroup class=”sidebar”>
+	<col>
+</colgroup>
+5. Now, insert two more column groups that include class names for both group
+styling and individual styling:
+<colgroup class=”info”>
+	<col class=”stripe”> <col> <col class=”stripe”>
+</colgroup>
+<colgroup class=”info”>
+	<col> <col class=”stripe”>
+</colgroup>
+6. After the column groups, insert a table header, a table footer, and a table
+body – each with six columns:
+<thead>
+	<tr><th colspan=”6”><!-- Header -->
+</thead>
+<tfoot>
+	<tr><td colspan=”6”><!-- Footer -->
+</tfoot>
+<tbody>
+	<!-- Rows with six cells each -->
+</tbody>
+7. Create a style sheet with rules to specify the appearance of the table, and its
+header, footer and data cells:
+table#jfk {width: 580px; border-collapse: collapse;}
+table#jfk tbody th {background: blue; color: white;}
+table#jfk tbody td {padding: 3px; text-align: center;}
+table#jfk tfoot {font-size: small;}
+TOPIC3column.css
+8. Next, add rules to specify the width of each column:
+table#jfk colgroup.sidebar col {
+	width: 70px;}
+table#jfk colgroup.info col {
+	width: 80px;}
+9. Now, add rules to style groups and individual columns:
+table#jfk colgroup.info {
+	border-left: 2px solid white;}
+table#jfk colgroup col.stripe {
+	background: aqua;}
+10. Save the HTML document and style sheet, then open the web page in your
+browser to see distinct column groups.
+The &bull; character entity is used in this table footer to create bullet points.
+Notice how the styling separates the column groups.
+
+	Utilizing templates
+HTML5 provides an interesting <template> element, which can be used to designate
+a group of elements that can be “cloned” by JavaScript. Typically, these elements
+will contain no data when designated as a template within the HTML document
+itself, but data can be dynamically inserted into the elements by a script. This
+feature is useful to dynamically populate lists or tables:
+TOPIC3template.html
+1. Start with the HTML5 document type declaration:
+<!DOCTYPE HTML>
+2. Add a root element containing head and body sections, with two script elements
+and a link to a style sheet:
+<html lang=“en”>
+<head>
+	<meta charset=“UTF-8”>
+	<title>Template Example</title>
+	<script src=”TOPIC3data.js”></script>
+	<script src=”TOPIC3template.js”></script>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3template.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+3. Within the body section, insert a table that provides a template for its data
+row:
+<table>
+	<caption>High Performance Cars</caption>
+	<tr><th>Make<th>Model<th>BHP</tr>
+	<template id=”row”>
+		<tr><td><td><td></tr>
+</template>
+</table>
+TOPIC3data.js
+4. Save the HTML document, then create a script that defines an associative array
+of data keys and values:
+var data = [
+	{“make”:“Bugatti”, “model”: “Veyron”, “bhp”: “1200”},
+	{“make”:“Lamborghini”, “model”: “Aventador”, “bhp”: “740”},
+	{“make”:“Ferrari”, “model”: “Berlinetta”, “bhp”: “730”},
+	{“make”:“Chevrolet”, “model”: “Camaro”, “bhp”: “650”},
+	{“make”:“Pagani”, “model”: “Zonda”, “bhp”: “650”}
+	];
+TOPIC3template.js
+5. Save the data script, then create a functional script to write the data values
+into the template row:
+function init( ) {
+	var template, i, car, clone, cells;
+	template = document.querySelector(“#row”);
+	for (i=0; i < data.length; i++) {
+		car = data[i];
+		clone = template.content.cloneNode(true);
+		cells = clone.querySelectorAll(“td”);
+		cells[0].textContent = car.make;
+		cells[1].textContent = car.model;
+		cells[2].textContent = car.bhp;
+		template.parentNode.appendChild(clone);
+		}
+	}
+document.addEventListener(“DOMContentLoaded”, init, false);
+TOPIC3template.css
+6. Save the functional script, then create a style sheet with rules to specify the
+appearance of the table, and apply background color to alternate rows:
+table {font-family: sans-serif; border: 1px solid black;}
+th {background: white;}
+tr:nth-child(odd) {background: coral;}
+td {padding: 5px 50px;}
+7. Save the style sheet, then open the HTML document in your web browser to see
+the table dynamically created.
+By default, the table’s header row will also receive the alternating background
+color unless a rule specifies a background color for each <th> element.
+
+	Chapter 6 Summary
+• The HTML5 <ul> element creates an unordered bullet-point list that contains
+individual list items within <li> elements.
+• A list-style-type property can specify that unordered list items should have a disc,
+circle or square bullet-point, or none.
+• A list-style-image property can specify the URL of an image that should appear in
+place of list item bullet-points.
+• The <ol> element creates an ordered numerical list that contains individual list items
+within <li> elements.
+• A list-style-type property can specify how ordered list items should be numbered,
+such as decimal, upper-latin, or none.
+• The <dl> element creates a definition list containing terms in <dt> elements and their
+descriptions in <dd> elements.
+• The HTML5 <table> element creates a table, and may optionally first enclose a
+<caption> element to title the table.
+• Each table row is created with a <tr> element to contain numerous <th> heading
+elements and <td> data elements.
+• Table cells can span down other cells using the rowspan attribute, and cells to the
+right using the colspan attribute.
+• Adding <thead> and <tfoot> elements, immediately after the <caption> element,
+enhances a table with a header and footer.
+• Tables that have a header and footer must also enclose all regular table rows within
+a <tbody> element.
+• A table cell’s text-align and vertical-align properties can be used to specify its
+content’s horizontal and vertical alignment.
+• Table columns can be grouped using a <colgroup> element to specify the number of
+columns to group with its span attribute.
+• Each table column can be represented by a <col> element so it can be individually
+styled.
+• The <template> element can designate a group of elements that can be cloned to
+dynamically write lists and tables.
+
+Chapter 8: Building Input Forms:
+	Submitting forms
+Web page forms are built from a number of HTML5 component elements that submit
+data to a web server for processing. Each of these elements include a name
+attribute and a value attribute so the data assigned to these attributes can be
+processed by the associated name=value pairs. For example, where an element’s name
+attribute is assigned “Brand” and its value attribute is assigned “Ford” the
+name=value pair represents the data as Brand=Ford.
+The examples in this chapter use the free Abyss Personal Edition web server
+available from aprelium.com
+All form components are enclosed between <form> </form> tags. Each opening <form>
+tag should include a method attribute, specifying which HTTP method is to be used
+to submit the form, and an action attribute specifying the URL of a web server
+script that is to be used to process the submitted data.
+The method attribute can be assigned values of “GET” or “POST”. Submission via the
+preferred GET method appends the data to the URL, whereas submission via the POST
+method encodes the data differently and can be used when the GET method fails.
+Typically, an HTML form will have a “Submit” button that the user clicks to submit
+data for processing. This is created by assigning the value “submit” to a type
+attribute of an <input> tag. Additionally, this tag may include name and value
+attributes to submit data assigned to them as a name=value pair.
+In order to demonstrate form submission and web server response, the examples
+throughout this chapter use a personal web server. This emulates submission of
+data to an external web server but is installed locally on the host computer. Like
+many web servers, it has a directory named “htdocs” in which to deposit web pages
+and can be addressed by the domain name “localhost”, or alternatively by the IP
+address “127.0.0.1”. For example, to view the default web page entitled
+“index.html” with the server running, you can enter http://localhost/index.html
+in the browser address field, or alternatively enter http://127.0.0.1/index.html
+To provide a response from the web server, the htdocs directory contains a custom
+server-side script named “echo.pl” that echos the submitted name=value data in an
+HTML response document – in each example, its URL is assigned to the form’s action
+attribute. The web server’s response simply displays the submitted values in a
+table to confirm the form data was received.
+The server-side scripts used to process the examples in this chapter are written
+in the Perl language and require the installation of ActivePerl support on Windows
+systems. The free ActivePerl Community Edition can be downloaded from
+activestate.com/activeperl/downloads
+TOPIC3submit.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Form Submission</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert an element to submit form data to a server-side
+script using the GET method:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<!-- Form components to go here -->
+</form>
+3. Now, in the form element, insert a paragraph containing a submission button –
+whose value will appear on the button:
+<p>
+	<input type=”submit”
+		name=”My Submit Button Name”
+		value=”My Submit Button Value”>
+</p>
+4. Save the HTML document, then open the web page your browser and click the
+button to submit the data in assigned to its name=value pair, and to see the
+response.
+To process the examples in this chapter, the files echo.pl, echo.css, perl.png and
+abyss.png should be placed in the “htdocs” directory of a local running web server
+– these are located in the download archive for this book available from
+ineasysteps.com/resource-centre/downloads
+Notice the data appended in the browser’s address field by the GET method – you
+can submit via the POST method to prevent this for sensitive data.
+
+	Gathering text input
+An HTML5 form can provide text boxes where the user can input data for submission
+to the web server for processing. These are created by assigning the value “text”
+to the type attribute of an <input> tag, and a name to its name attribute. Upon
+submission, the data in the text box is sent as the value associated with the text
+box name as a name=value pair. Optionally, the <input> tag can include a value
+attribute to specify a default value. A text box for the input of a password is
+created by assigning the value “password” to the type attribute of an <input> tag.
+This functions just like any other text box, except it does not display its
+contents as readable text. Both text and password <input> elements can optionally
+include other attributes to control their performance:
+• size – the width of the text box in average character widths
+• minlength and maxlength – permissible number of characters
+• min and max – permissible range of numeric values
+• placeholder – provides a data entry hint to the user
+• readonly – the default value in the text box cannot be changed
+• disabled – the text box is grayed out and will not be submitted
+TOPIC3text.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Text Input Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<!-- Text input elements to go here -->
+	<p>
+		<input type=”submit” value=”Submit Form”>
+	</p>
+</form>
+3. Now, in the form element, insert a definition list element:
+<dl>
+	<!-- Terms and descriptions to go here -->
+</dl>
+4. In the definition list, insert terms and descriptions:
+<dt>User Name:
+	<dd><input type=”text” name=”Name”>
+<dt>Password:
+	<dd><input type=”password” name=”Password”>
+<dt>City:
+	<dd><input type=”text” name=”City” value=”Dallas”>
+<dt>Area:
+	<dd><input type=”text” name=”Area” value=”Downtown” disabled>
+<dt>State:
+	<dd><input type=”text” name=”State” value=”Texas” readonly>
+<dt>Zip Code:
+	<dd><input type=”text” name=”Zip Code” size=”5” maxlength=”5”>
+5. Save the HTML document, then open the web page in your browser, enter some
+data and submit the form.
+Notice that the readonly attribute ensures that the State cannot be edited, the
+maxlength attribute limits the Zip Code to 5 characters in length, and the
+disabled attribute grays out the Area text box – so that element will not be
+submitted to the server for processing.
+The server-side script echos the name=value pairs arranged in alphabetical name
+order, irrespective of their order on the page.
+
+	Controlling input type
+An HTML5 form <input> tag can enforce its completion by including the required
+keyword. It can also control what the user is permitted to submit by the value
+assigned to its type attribute. Many of the input types listed in the table below
+prohibit submission of the form if the user enters a value that is not permitted,
+and issue an error notice. Some also provide special controls that allow the user
+to easily select a permitted value.
+The month, week, and datetime-local input types are new types introduced in HTML
+5.1.
+text: String of text
+password: String of text (obscured by browser)
+url: Valid URL protocol and domain address
+email: Valid email address
+date: Date in mm/dd/yyyy format
+month: Month and year
+week: Week number and year
+time: Time in HH:MM format
+datetime-local: Date and time as mm-dd-yy HH:MM
+number: Numeric integer value
+range: Numeric integer value (slider)
+color: Color in #RRGGBB hexadecimal format
+file: File path address (browse)
+TOPIC3type.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Input Types Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<!-- Input elements to go here -->
+	<p>
+		<input type=”submit” value=”Submit Form”>
+	</p>
+</form>
+3. Now, in the form element, insert a paragraph containing four controlling input
+elements:
+<p>
+	Color: <input type=”color” name=”color”>
+	Range: <input type=”range” name=”range” min=”1” max=”10”>
+	Time: <input type=”time” name=”time”> <br>
+	URL: <input type=”url” name=”url” size=”54” required>
+</p>
+4. Save the HTML document, then try to submit the form.
+5. Enter a valid URL and enter permitted values, using special controls for other
+inputs, then submit the form.
+
+	Providing text areas
+An HTML5 form can provide a multi-line text field where the user can input data
+for submission to the web server for processing. These are created by <textarea>
+</textarea> tags that may enclose default text content. The <textarea> tag should
+include a name attribute that will be associated with the element’s content upon
+submission as a name=value pair. Additionally, this tag must include a rows
+attribute, to specify the number of visible text lines, and a cols attribute to
+specify the field width in average character widths. Optionally, it may also
+include a readonly attribute to prevent the user editing its content.
+Unlike a text <input> element, the <textarea> element has no value attribute – as
+its content is treated as its value.
+When submitting large bodies of text, you must be aware of some limitations of the
+GET method. This varies by browser, but Internet Explorer typically allows the URL
+to append up to around 200 characters. The POST method provides much larger
+capacity, as the text is sent as “Form Data” along with the HTTP header, not
+simply appended to the URL:
+TOPIC3textarea.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Text Area Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the POST method:
+<form method=”POST” action=”http://localhost/echo.pl”>
+	<!-- Text area element to go here -->
+	<p>
+		<input type=”submit” value=”Submit Form”>
+	</p>
+</form>
+3. Now, in the form element, insert a text input area that has 8 rows and is 70
+average character widths wide:
+<textarea name=”The Future Web” rows=”8” cols=”70”>
+</textarea>
+4. Save the HTML document, then open the web page in your browser, enter some
+data and submit the form.
+5. The text is not appended to the URL, so examine the response headers to see it
+has been sent as “Form Data”.
+The average character width may vary between browsers − so the physical size of
+the text area field may vary too.
+You can use the Developer Tools in the Google Chrome web browser to examine
+response headers.
+
+	Checking boxes
+An HTML5 form can provide a visual checkbox “on/off” switch that the user can
+toggle to include or exclude its associated data for submission to the server.
+When the box is checked, the switch is set to “on” and its name=value pair will be
+submitted, but when the box is unchecked, the switch is set to “off” and its
+name=value pair is not submitted.
+A checkbox is created by assigning the value “checkbox” to the type attribute of
+an <input> tag. This tag must also include a name attribute and a value attribute
+to specify the name=value pair values. Optionally, this tag may also include a
+Boolean checked attribute to set the initial state of the switch to “on” – so a
+check mark will automatically appear in the checkbox. Checkbox names may be
+individually unique, or several checkboxes can share a common name to allow the
+user to select multiple values for the same named property. In this case, the
+selected values are returned by the server as a comma-separated list where
+name=value,value,value. Multiple checkboxes that share a common name can be
+visually grouped by surrounding their <input> elements by <fieldset> </fieldset>
+tags. These may also contain <legend> </legend> tags to state a common group name:
+TOPIC3checkbox.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Checkbox Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<!-- Checkbox elements to go here -->
+	<p>
+		<input type=”submit” value=”Submit Form”>
+	</p>
+</form>
+3. Now, in the form element, insert a paragraph containing a checkbox to appear
+automatically checked:
+<p>
+	Yes, I would like to receive details
+	<input type=”checkbox” name=”Ask For” value=”Details” checked>
+</p>
+The <fieldset> element only groups the related elements it encloses for visual
+presentation – it does not associate them programmatically.
+4. Next, in the form element, insert a fieldset containing a legend and five
+checkboxes to appear unchecked:
+<fieldset>
+<legend>Activities of Interest...</legend>
+Sailing <input type=”checkbox” name=”Do” value=”Sail”><br>
+Walking <input type=”checkbox” name=”Do” value=”Walk”><br>
+Driving <input type=”checkbox” name=”Do” value=”Drive”><br>
+Ski-ing <input type=”checkbox” name=”Do” value=”Ski”><br>
+Jogging <input type=”checkbox” name=”Do” value=”Jog”>
+</fieldset>
+5. Save the HTML document, then open the web page in your browser, check some
+boxes, and submit the form.
+Notice that the checked attribute need have no assigned value – its mere presence
+sets the switch to “on”, and its absence leaves the switch in its default “off”
+state.
+As the checkboxes for the Walking and Jogging activities are unchecked, their
+name=value pairs are not sent to the server.
+
+	Choosing radio buttons
+An HTML5 form can provide visual “radio button” groups, from which the user can
+select one button to include its associated data for submission to the server.
+When the button is selected, its switch is set to “on” and its name=value pair
+will be submitted, otherwise its switch is set to “off” and its name=value pair is
+not submitted. Unlike checkboxes, radio buttons that share a common name are
+mutually exclusive, so when one radio button is selected, all others in that group
+are automatically switched off.
+A radio button is created by assigning the value “radio” to the type attribute of
+an <input> tag. This tag must also include a name attribute and a value attribute
+to specify the name=value pair values. Optionally, this tag may also include a
+Boolean checked attribute to set the initial state of the switch to “on” – so the
+button will automatically appear selected.
+Radio button groups that share a common name can be visually grouped by
+surrounding their <input> elements by <fieldset> </fieldset> tags. These may also
+contain <legend> </legend> tags to contain a group name:
+TOPIC3radio.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Radio Button Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl” >
+	<p>
+		Choose only one answer...
+	</p>
+<!-- Fieldset to go here -->
+	<p>
+		<input type=”submit” value=”Submit Form”>
+	</p>
+</form>
+3. Next, in the form element, insert a fieldset with a legend:
+<fieldset>
+<legend>What kind of language is HTML?</legend>
+	<!-- Radio button elements to go here -->
+</fieldset>
+4. Now, in the fieldset, insert radio buttons with one selected:
+Scripting <input type=”radio”
+	name=”Definition” value=”Scripting”> <br>
+Markup <input type=”radio”
+	name=”Definition” value=”Markup”> <br>
+Programming <input type=”radio”
+	name=”Definition” value=”Programming” checked>
+5. Save the HTML document, then open the web page, select the correct answer,
+and submit the form.
+Always include a checked attribute to automatically select one button in each
+radio button group – to provide a default choice.
+Radio button elements resemble the buttons on old radios where each button
+selected a particular radio station – but, of course, no two stations could be
+selected simultaneously.
+
+	Selecting options
+An HTML5 form can provide a select option list, from which the user can select one
+option to include its associated data for submission to the server.
+A select option list is created using <select> </select> tags. The opening
+<select> tag must include a name attribute specifying a list name. The <select>
+element encloses <option> </option> tags that define each option. Each opening
+<option> tag must include a value attribute specifying an option value. When the
+form is submitted, the list name and the selected option value are sent to the
+server as a name=value pair.
+Optionally, one <option> tag may also include a Boolean selected attribute to
+automatically select that option, and the <option> elements may be grouped by
+enclosure in <optgroup> </optgroup> tags. The opening <optgroup> tag may specify
+an option group name to a label attribute.
+A select option list will normally appear as a single-line dropdown list, unless
+a size attribute is included in the <select> tag to specify the number of rows to
+be visible:
+TOPIC3select.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Select Option Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<!-- Select option lists to go here -->
+	<p>
+		<input type=”submit” value=”Submit Form”>
+	</p>
+</form>
+3. Now, in the form element, insert a fixed height select option list with one
+option automatically selected:
+<select name=”HTML List Type Selector One” size=”4”>
+<optgroup label=”List Type 1”>
+<option value=”UL”>Unordered List</option>
+<option value=”OL” selected>Ordered List</option>
+<option value=”DL”>Definition List</option>
+</optgroup>
+</select>
+4. Next, in the form element, insert a drop-down select option list with one
+option automatically selected:
+<select name=”HTML List Type Selector Two”>
+<optgroup label=”List Type 2”>
+<option value=”UL”>Unordered List</option>
+<option value=”OL”>Ordered List</option>
+<option value=”DL” selected>Definition List</option>
+</optgroup>
+</select>
+5. Save the HTML document, then open the web page in your browser, open the
+drop-down list and submit the form to see the default option values get submitted.
+Always include a selected attribute to automatically select one option in each
+option list – to provide a default choice.
+
+	Utilizing hidden data
+An HTML5 form can provide hidden elements, which create no visible controls but
+allow additional data to be submitted to the server. Hidden form data is created
+by assigning the value “hidden” to the type attribute of an <input> tag. This tag
+must also include a name attribute, and may include a value attribute to specify
+static data that will be submitted as a name=value pair. Optionally, the <input>
+tag may include an id attribute and omit the value attribute so its value can be
+specified by script.
+Hidden form data can also be used to perform a calculation and dynamically display
+the result in an <output> </output> element. The <output> tag must include an id
+attribute and a for attribute for reference in script. The for attribute can
+specify multiple element identities as a space separated list. These can be used
+in an assignment to the <form> tag’s oninput attribute, to perform a calculation
+whose result will appear in the <output> </output> element – but will not be
+submitted to the server:
+TOPIC3hidden.html
+1. Start a new HTML5 document that incorporates a script:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Hidden Data Example</title>
+	<script src=”TOPIC3hidden.js”></script>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert an image with sale price details:
+<img src=”sale.png” width=”200” height=”120” alt=”Sale”>
+3. Next, insert a form element to send form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<!-- Hidden data, input, and output to go here -->
+	<input type=”submit” name=”Offer” value=”Buy Teddy Bears”>
+</form>
+4. Within the form element, insert a visible input element for user-entered data:
+Qty (60 Available) <input type=”number” id=”qty”
+		name=”Quantity” size=”2” min=”1” max=”60”>
+Hidden data elements can be useful to maintain user data across a website – a
+user name entered on the first page can be recalled on any other page.
+5. Next, in the form element, insert an invisible element for hidden data and an
+element to display a calculated result:
+<input type=”hidden” id=”price” name=”Unit Price” value=”24.99”>
+<output name=”sum” for=”qty price”></output><br>
+6. Now, insert another attribute in the <form> tag:
+oninput=“sum.value=multiply(qty, price)”
+TOPIC3hidden.js
+7. Create a script to perform the calculation:
+function multiply(q,p) {
+	var result=parseFloat(q.value) * parseFloat(p.value):
+	if (isNaN(result) || result < 1)
+		return ““;
+	else
+		return “Total: $” + result.toFixed(2);
+}
+8. Save the HTML document and script, then open the web page in your browser,
+enter data, and submit the form.
+JavaScript is case-sensitive, so you must use the correct case when copying
+script examples.
+The hidden form <input> data gets submitted to the server but the <output> element
+merely displays the result of the calculation.
+
+	Pushing buttons
+An HTML5 form can provide push buttons for scripting purposes. When the user
+pushes a button, a “click event” occurs to which a script function can respond.
+This allows the user to dynamically interact with the form and can be used to set
+attribute values. When a script designates a function to be called, whenever a
+button gets pushed it is said to attach a “behavior” to that button. A push button
+is created by specifying a “button” value to the type attribute of an <input> tag,
+and should also include an id attribute so the script can easily identify that
+element.
+Additionally, any HTML5 form can be returned to its original state by pushing a
+reset button that is created by specifying a “reset” value to the type attribute
+of an <input> tag:
+TOPIC3button.html
+1. Start a new HTML5 document that incorporates a script:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Button Example</title>
+	<script src=”TOPIC3button.js”> </script>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a reset button, a push
+button, and a submit button to send form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl” >
+	<!-- Fieldset to go here -->
+	<input type=”reset” value=”Reset Form”>
+	<input type=”button” value=”Choose For Me” id=”btn”>
+	<input type=”submit” value=”Submit Form”>
+</form>
+3. Within the form element, insert a fieldset containing a legend and a checkbox
+group:
+<fieldset>
+	<legend>Pizza Toppings</legend>
+	<input id=”pepperoni” type=”checkbox”
+		name=”Toppings” value=”Pepperoni”> Pepperoni |
+	<input id=”mushroom” type=”checkbox”
+		name=”Toppings” value=”Mushroom”> Mushroom |
+	<input id=”bbqsauce” type=”checkbox”
+		name=”Toppings” value=”BBQ Sauce”> BBQ Sauce
+</fieldset>
+TOPIC3button.js
+4. Create a script that designates a function when the page gets loaded to attach
+a behavior to the form’s push button:
+function choose() {
+	document.getElementById(“pepperoni”).checked=true;}
+function init() {
+	document.getElementById(“btn”).onclick=choose;}
+onload=init;
+5. Save the HTML document and script, then open the web page in your browser,
+and push the button to check a box.
+6. Now, push the reset button to clear the form, then check the other two boxes
+and submit the form.
+The mere presence of a Boolean checked attribute in an HTML element checks the
+box, but in script, the box’s checked property needs to be assigned a true value
+to check the box.
+
+	Using images for submission
+An HTML5 form can use an image button to submit the form, in place of a regular
+submit button. An image button is created by specifying an “image” value to the
+type attribute of an <input> tag and including an alt attribute. When a form is
+submitted by an image button, the XY coordinates of the point at which the click
+occurred are automatically submitted as name=value pairs along with the rest of
+the form data.
+Additionally, a regular <img> tag can be used as an image button by attaching a
+behavior with script. Where the behavior is to submit a form, the script function
+can usefully incorporate validation. For example, to ensure a user-entered email
+address is in the expected format:
+TOPIC3ibutton.html
+1. Start a new HTML5 document that incorporates a script:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Image Button Example</title>
+	<script src=”TOPIC3ibutton.js”> </script>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a text input field, which
+both have an identity for scripting:
+<form id=”form-1” method=”GET” action=”http://localhost/echo.pl”>
+	Please Supply Your Email Address:
+	<input id=”adr” name=“Address” type=“text” size=”45”> <br>
+	<!-- Image Buttons to go here -->
+</form>
+3. Next, in the form element, insert an image button that will simply submit the
+form:
+<input type=”image” src=”ibutton.png” alt=”Submit Button” title=”Click to submit
+form”>
+4. Now, in the form element, insert an image button that will perform validation
+then submit the form:
+<img id=”btn” src=”ibutton.png” alt=”Submit Button” title=”Click to submit with
+JavaScript validation”>
+Note that the image button that will perform validation is given an identity so
+script can attach a behavior to it.
+TOPIC3ibutton.js
+5. Create a script that designates a function when the page gets loaded – to
+attach a behavior to an image button:
+function send() {
+	var address = document.getElementById(“adr”).value;
+	var pattern=
+	/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+	if(!pattern.test(address)) alert(“Invalid Email Address”);
+	else document.getElementById(“form-1”).submit();
+	}
+function init() {
+	document.getElementById(“btn”).onclick=send;
+	}
+onload = init;
+6. Save the HTML document and script, then open the web page in your browser,
+enter an incomplete email address and submit the form using each button.
+7. When validation fails using the button with scripted behavior, complete the
+email address correctly then use the validating button again to submit the form
+successfully.
+The script in this example checks the input text against a regular expression
+pattern that describes the format of any valid email address. The pattern must
+appear on a single line – exactly as it is listed here.
+
+	Adding logos to buttons
+HTML5 can create push buttons that display small “logo” images using <button>
+</button> tags. These tags can then enclose an <img> element specifying the URL of
+the logo image, and text that will appear on the face of the button. Each <button>
+tag should include a type attribute to specify whether the button is simply a
+scripting “button” type, a “submit” form type, or a “reset” form type. Scripting
+buttons can include an onclick attribute in the <button> tag to specify the
+function to be called when the button gets clicked, or directly specify a
+snippet of script to execute:
+TOPIC3logo.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Logo Button Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a fieldset with a legend
+and a text input field:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<fieldset>
+		<legend>Favorite Color</legend>
+		<input type=”text” name=”Color”>
+		<!-- Logo Buttons to go here -->
+	</fieldset>
+</form>
+3. In the fieldset, insert a scripting logo button specifying a snippet of script
+to execute when that button gets clicked:
+<button type=”button”
+	onclick=”alert(‘Enter your favorite color in the text box’)”>
+	<!-- Logo Image and Face Text to go here -->
+</button>
+4. Now, within the button element, insert an image element and text that will
+appear on the face of the button:
+<img src=”logo-help.png” alt=”Help”>Help
+5. Next, add a button element to submit the form:
+<button type=”submit”>
+<img src=”logo-submit.png” alt=”Submit”> Submit</button>
+6. Finally, add a button element to reset the form:
+<button type=”reset”>
+<img src=”logo-reset.png” alt=”Reset”>Reset</button>
+7. Save the HTML document, then open the web page in your browser and click the
+“Help” button.
+8. Enter a color in the text box, then click the reset logo button to clear the
+text box.
+9. Enter a color in the text box again then submit the form.
+You can specify a default value for a text input to the value attribute of its
+<input> tag.
+
+	Labeling form controls
+Text that is to be associated with an HTML5 form control can be enclosed between
+<label> </label> tags. The opening <label> tag can include a for attribute to
+specify the value assigned to the control’s id attribute to make the association.
+Alternatively, the <label> element can simply enclose both the text and the
+control element to make the association. This allows styling to be applied to the
+entire label – including the text and control. Often this is useful to distinguish
+the control associated with particular text. Additionally, each form control
+element may include a tabindex attribute to specify its tabbing order within the
+document as a unique value between 0 and 32,767. Using the tab key, the user can
+then navigate through the document starting at the lowest tabindex value and
+proceeding through successively higher values:
+TOPIC3label.html
+1. Start a new HTML5 document with a link element pointing to a style sheet:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Label Example</title>
+	<link type="text/css" rel=”stylesheet” href=”TOPIC3label.css”
+		media="screen">
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a fieldset with a legend:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<fieldset>
+		<legend>Toolbox</legend>
+		<!-- Form Controls to go here -->
+	</fieldset>
+</form>
+3. Now, in the fieldset, insert labels that each contain text and a checkbox with
+a specified tab order:
+<label>Hammer
+	<input type=”checkbox” name=”Toolbox”
+		value=”Hammer” tabindex=”2” checked>
+</label>
+<label>Wrench
+	<input type=”checkbox” name=”Toolbox”
+		value=”Wrench” tabindex=”3”>
+</label>
+<!-- Three similar for tabindex 4,5,6 go here -->
+A form “control” is any <input>, <button> or <textarea> element. A tabindex
+attribute can be included in these tags and also in any <a>, <area>, <object> or
+<select> tag.
+4. Next, in the fieldset, insert a logo submit button – to be first in the tab
+order:
+<button type=”submit” tabindex=”1”>
+<img src=”toolbox.png”>Submit
+</button>
+5. Save the HTML document then open the web page in your browser to see the
+text-control association is unclear.
+6. Edit the HTML document to add a class attribute to each alternate label tag for
+styling purposes:
+<label class=”hilite”>
+7. Create a style sheet with a rule to distinguish the labels:
+label.hilite {background: red; color: white;}
+TOPIC3label.css
+8. Save the HTML document and style sheet, then open the web page to see that the
+text-control association is now clear. Use the tab key to move between controls,
+and the space bar to select checkboxes, then submit the form.
+
+	Listing data options
+A simple “autocomplete” feature can be provided for a text <input> using a
+<datalist> </datalist> element to enclose a number of pre-defined <option> values.
+The user may choose any one of the options, or enter text directly into the input
+field. In order to associate the <input> field with the list, the <datalist> tag
+must include an id attribute to specify a list name. The same name must then be
+specified to a list attribute within the <input> tag to create the association.
+The <input> tag must also include a name attribute to send to the server as usual.
+TOPIC3datalist.html
+1. Start a new HTML5 document with a link element pointing to a style sheet:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>Data List Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the GET method:
+<form method=”GET” action=”http://localhost/echo.pl”>
+	<!-- Form data list and input field to go here -->
+	<p>
+		<input type=”submit” value=”Submit Form”>
+	</p>
+</form>
+3. Next, insert a data list of pre-defined options with a specified id name:
+<datalist id=”browsers”
+	<option value=”Chrome”>
+	<option value=”Firefox”>
+	<option value=”Internet Explorer”>
+	<option value=”Opera”>
+	<option value=”Safari”>
+	<option value=”Microsoft Edge”>
+</datalist>
+4. Now, insert a label that contains text and an input field that is associated
+with the data list above:
+<label>Choose your browser from this list:
+	<input list=”browsers” name=”myBrowser”>
+</label>
+The name=value pair submitted to the server is the specified list name and the
+input value selected from the options or entered directly by the user.
+5. Save the HTML document, then open the web page in your browser and select the
+input field to see the pre-defined options appear in a drop-down list.
+You may need to double-click the input field to override your browsers’ own
+autocomplete suggestions.
+6. Select any option from the drop-down list, or type your own text into the input
+field to create a value.
+7. Submit the form to send the input field name and your chosen value to the
+server.
+
+	Uploading files
+An HTML5 form can provide a file selection facility, which calls upon the
+operating system’s “Choose File” dialog, to allow the user to browse their local
+file system and select a file.
+A file selection facility is created by assigning the value “file” to the type
+attribute of an <input> tag, and a name to its name attribute. This element
+produces a text field and a “Browse” button to launch the Choose File dialog.
+After a file has been selected, its full path appears in the text field. When the
+form is submitted, the element name and the selected file’s name are sent to the
+web server as a name=value pair. Where a selected file is to be uploaded to the
+web server, the <form> tag must include an enctype attribute specifying the
+encoding type as “multipart/form-data”. Also, its method attribute must specify
+the POST method – because Form Data cannot be appended to a URL using the GET
+method:
+TOPIC3upload.html
+1. Start a new HTML5 document:
+<!DOCTYPE HTML>
+<html lang=”en”>
+<head>
+	<meta charset=”UTF-8”>
+	<title>File Upload Example</title>
+</head>
+<body>
+	<!-- Content to go here -->
+</body>
+</html>
+2. In the body section, insert a form element containing a submit button to send
+form data by the POST method and specify the encoding type for Form Data:
+<form method=”POST” action=”http://localhost/upload.pl”
+	enctype=”multipart/form-data”>
+	<!-- File input element to go here -->
+	<input type=”submit” value=”Submit Form”>
+</form>
+3. In the form element, insert a file element and a line break:
+<input type=”file” name=”Upload”> <br>
+4. Save the HTML document, then open the web page in your browser, select a file
+and submit the form.
+5. Examine the headers to see the file details as Form Data.
+To process this example, the files upload.pl and upload.css need to be added to
+the “htdocs” directory of a local running web server – these are located in the
+download archive for this book available from:
+www.ineasysteps.com/resourcecentre/downloads/
+
+	Chapter 8 Summary
+• HTML5 forms submit data to the web server as name=value pairs for processing by
+a specified server-side script.
+• All form component elements are enclosed between <form> </form> tags, which
+must include an action attribute, to specify the URL of the processing script, and
+a method attribute to specify the submission method as “GET” or “POST”.
+• Each <input> tag’s type attribute specifies its component type, such as “text”,
+“password”, “checkbox”, “radio”, etc.
+• An <input> tag can include name and value attributes to specify data for
+submission as a name=value pair.
+• An <input> tag can enforce its completion by including the required keyword, but
+many automatically prohibit submission if the user enters a value that is not
+permitted.
+• A multi-line text field is created by <textarea> </textarea> tags that require
+rows and cols attributes to specify its size.
+• Radio button and checkbox inputs only submit their name and value attribute data
+if they are checked.
+• An option list is created by enclosing a number of <option> elements between
+<select> </select> tags.
+• Option lists can be enclosed between <optgroup> </optgroup> tags that can
+specify an option group name to a label attribute.
+• Forms can contain “hidden” elements that allow static or script-generated data
+to be submitted to the server for processing.
+• A form may be submitted by a regular submit <input> element, by an image <input>
+element, or by a <button> element.
+• Logo images can be added to the button face by enclosing an <img> element
+between <button> </button> tags.
+• Each form control can be enclosed between <label> </label> tags to visually
+group them with text for styling purposes.
+• An <input> tag can include a list attribute to associate it with the id of a
+<datalist> element to provide pre-defined options.
+• When a form is to upload files, the <form> tag must include an enctype attribute
+specifying encoding as “multipart/form-data”.
+
+Pre-Assessment
+Q1: Table Tags v: Which HTML tag indicates a table cell?
+A: td
+
+Q2: Div Tag v: The ___ tag creates an image map that links to an image, while the
+___ tag defines the different areas within an image map.
+A: map; area v
+E: The map tag creates an image map that links to an image, while the area tag
+defines the different areas within an image map.
+
+Q3: Blocks of Text v: In some programs, images are ___ into the document, whereas
+images on webpages are ___.
+A: embedded; linked to a stored location
+
+Q4: Unordered Lists v: Span tags work with large blocks of text.
+A: True
+E: Span tags work with individual words and phrases.
+
+Q5: Article Tag x: The article tag is used to mark off self-containing text that
+can make up which of the following?
+A: A blog entry; a side note x => a story; an article
+E: The article tag is used to mark off self-containing text that can make up a
+story, blog entry, or an article.
+
+Q6: Adding Images to a Webpage x: Which formatting features does the div tag allow
+programmers to control?
+A: Text font x => Background colors v; Positioning; Alignment
+E: The div tag allows programmers to control formatting features such as
+alignment, positioning, background colors, boxes, and others.
+
+Q7: Absolute Link x: A form put can be used to change existing customer
+information.
+A: True x => False
+E: A form POST can be used to change existing customer information, but a form
+PUT cannot.
+
+Q8: Image Maps v: The appropriate use of label tags is considered best practice in
+HTML because a lot of internet traffic comes from ___.
+A: Mobile Devices
+
+Q9: Form Submission Method x: Unordered lists are basic bulleted lists.
+A: False x => True
+
+Q10: Form Example v: Which form submission method is a request to take data
+submitted and insert it into a database?
+A: Put
+E: The submission method, put, is a request to take data submitted and insert it
+into a database.
+
+Q11: Enter Lines of Text v: How many steps make up the process of adding the
+output tag to a form?
+A: Two
+
+Q12: Best Practice v: An absolute link contains a complete ___ to a link.
+A: Address
+
+Q13: Output Process v: Which input type is used for entering multiple types of
+text?
+A: Textarea
