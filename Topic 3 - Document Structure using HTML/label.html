@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Label Example</title>
+    <link type="text/css" rel="stylesheet" href="TOPIC3label.css"
+          media="screen" />
+</head>
+<body>
+    <form method="get" action="http://localhost/echo.pl">
+        <fieldset>
+            <legend>Toolbox</legend>
+            <label class="hilite">
+                Hammer
+                <input type="checkbox" name="Toolbox"
+                       value="Hammer" tabindex="2" checked />
+            </label>
+            <label>
+                Wrench
+                <input type="checkbox" name="Toolbox"
+                       value="Wrench" tabindex="3" />
+            </label>
+            <label class="hilite">
+                Screwdriver
+                <input type="checkbox" name="Toolbox"
+                       value="Screwdriver" tabindex="4" />
+            </label>
+            <label>
+                Ratchet
+                <input type="checkbox" name="Toolbox"
+                       value="Ratchet" tabindex="5" />
+            </label>
+            <label class="hilite">
+                Power Drill
+                <input type="checkbox" name="Toolbox"
+                       value="Power Drill" tabindex="6" />
+            </label>
+            <button type="submit" tabindex="1">
+                <img src="toolbox.png"/>Submit
+            </button>
+        </fieldset>
+    </form>
+</body>
+</html>
