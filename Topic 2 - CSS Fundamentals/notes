@@ -189,54 +189,20 @@ Chapter 2:
 8.	Evaluating Importance
 9.	Summary
 
-Chapter 2: Selecting Targets
-	Selecting by Element Type
+Chapter 2:
+1.	Selecting by Element Type
 The selector part of a style rule selects elements in an HTML document to be
 styled according to the values specified in that rule's Declaration Block.
 A "type" selector selects all elements in the page that match the selector.
 Multiple elements can be selected by a type selector that specifies a
 comma-separated list of element types.
-1. Create an HTML document containing a heading and an unordered list of
-hyperlinks within a "div" container:
-<div>
-	<h1>Large Heading</h1>
-	<ul>
-		<li><a href="www.google.com">Google</a></li>
-		<li><a href="www.yahoo.com">Yahoo</a></li>
-		<li><a href="www.mediafire.com">MediaFire</a></li>
-	</ul>
-</div>
-2. Create a linked style sheet with a style rule setting the width of the
-container element:
-div {width: 50%}
-3. Add a style rule setting the background color of all hyperlinks
-a {background: yellow}
-4. Now add a style rule setting the background color of both the heading and
-list elements:
-h1, ul {background: aqua}
-5. Save the style sheet file alongside the HTML file then open the web page in a
-browser to see the elements styled by type selectors.
-The CSS * universal selector can be used to select elements of all types within
-an HTML document – as if it was a selector listing all element types as a
-comma-separated list.
-6. Edit the style sheet by adding a style rule with a universal selector to make
-all text italic:
-* {font-style: italic}
-Beware: Remember that there must be a comma between the element types in a
-selector targeting multiple element types.
-7. Save the amended style sheet then refresh the browser to see both heading and
-list text become italic.
-The * universal selector can also be used to select elements of any type
-contained within a specified element type.
-8. Edit the style sheet by adding a style rule with a universal selector to add
-a border around all elements within the "div" container:
-div * {border: 0.2em solid red}
-9. Save the amended style sheet then refresh the browser once more to see borders
-added around the elements.
-The div * selector selects elements of all types within the div container, but
-not the <div> element itself.
 
-	Selecting by Class
+Refer to:
+type.html
+&
+type.css
+
+2.	Selecting by Class
 As an alternative to selecting elements by type, a class selector can select HTML
 elements that contain a class attribute that has been assigned a value matching
 the selector. The class selector begins with a period character followed by the
@@ -245,26 +211,13 @@ number of specific elements of different type.
 Additionally a class selector can be combined with a type selector to select
 specific instances of a class. In this case the selector first specifies the
 element type, followed by a period character and the class value to match.
-1. Create an HTML document containing a paragraph including two spanned words, in
-which all elements have a common class value:
-<p class="frame">You can fool all the people
-<span class="frame">some</span> of the time, and
-<span class="frame">some</span> of the people all the
-time, but you cannot fool all the people all of the time.</p>
-TOPIC2class.html
-2. Create a linked style sheet with a style rule drawing red borders around each
-element using the class value:
-.frame { border : 0.2em solid red }
-TOPIC2class.css
-3. Now add a rule overriding the previous one for the paragraph element only, to
-draw a blue border around the paragraph and set its width:
-p.frame { border : 0.2em solid blue; width : 50% }
-Other paragraphs added to this HTML document would not be styled with this style
-sheet – unless they too contained a class attribute with the value of "frame".
-4. Save the style sheet file alongside the HTML document then open the web page
-in a browser to see the elements styled by the class selectors.
 
-	Selecting by Identity
+Refer to:
+class.html
+&
+class.css
+
+3.	Selecting by Identity
 Similar to a class selector, an ID selector can select HTML elements that contain
 an id attribute that has been assigned a value matching the selector. The ID
 selector begins with a # hash character followed by the ID value to match. This is
@@ -273,76 +226,24 @@ value must be unique within the HTML document.
 Optionally an ID selector can be combined with a type selector simply to identify
 the element type. In this case the selector first specifies the element type,
 followed by a hash character and the ID value to match.
-1. Create an HTML document containing a paragraph including two spanned phrases,
-in which all elements have a unique ID value:
-<p id="para1">You may only be someone
-<span id="span1">in the world</span><br>
-but to someone else you may
-<span id="span2">be the world</span></p>
-TOPIC2id.html
-2. Create a linked style sheet with style rules painting colored backgrounds
-behind the text in each span element:
-#span1 { background : yellow }
-#span2 { background : lime }
-TOPIC2id.css
-3. Now add a style rule to paint a colored background behind the rest of the
-paragraph and set its width:
-p#para1 { background : cyan; width : 70% }
-4. Save the style sheet file alongside the HTML document then open the web page
-in a browser to see the elements styled by the ID selectors.
-If a class selector and an ID selector both attempt to style the same property of
-one element the ID selector value would be applied as it takes preference.
 
-	Selecting Descendants
+Refer to:
+id.html
+&
+id.css
+
+4.	Selecting Descendants
 A descendant selector can be used in a style rule to select HTML elements by
 reference to an outer containing element from which they "descend". For example,
 a span element within a paragraph element descends from the paragraph element –
 so a descendant selector of p span could be used to select it for styling.
-1. Create an HTML document containing an unordered list and an ordered list
-within a "div" container:
-<div id="menu">
-	<ul>
-		<li>Bigger Burger</li>
-		<li>Buffalo Wings</li>
-		<li>Deepcrust Pizza</li>
-	</ul>
-	<ol>
-		<li>Cola</li>
-		<li>Beer</li>
-	</ol>
-</div>
-TOPIC2descendants.html
-2. Create a linked style sheet with style rules to color the items in each list:
-ul li {color: red}
-ol li {color: blue}
-TOPIC2descendants.css
-3. Save the style sheet alongside the HTML document then open the web page in a
-browser to see the list items styled by descendant selectors.
-Although it is generally preferable to reference the element from which the target
-element directly descends it is sometimes useful to simply reference a higher
-level – say, that from which the containing element descends. This means that the
-direct containing element is omitted from the selector and the element is selected
-by reference to the higher level containing element.
-4. Edit the style sheet by replacing the previous style rules with a single rule
-to color the items of both lists in a single color:
-#menu li {color: green}
-5. Save the amended style sheet then refresh the browser window to see the list
-items styled without reference to their direct containing elements.
-In this case a descendant selector of div li would also select all list items
-but it is better to reference the id value so as not to select list items in
-other div elements.
-More specific selection can be made, however, by stating each containing element
-in the line of descent in a descendant selector.
-6. Edit the style sheet once more by replacing the previous style rule with two
-style rules to color the items of both lists in different colors:
-#menu ul li {color: orange}
-#menu ol li {color: purple}
-7. Save the newly-amended style sheet then refresh the browser window again to
-see the list items styled by reference to their lines of descent.
-State the line of descent wherever possible when using descendant selectors to
-make specific selections.
 
-	Selecting by Relationship
+Refer to:
+descendants.html
+&
+descendants.css
+
+5.	Selecting by Relationship
 Style rules can select elements for styling using the HTML document structure
 itself. The elements in all HTML documents are arranged in a hierarchical manner
 descending from the root <html> element. The next level contains the <head> and
@@ -370,37 +271,13 @@ stating the specified element name followed by the + plus character then the
 sibling name. For example, an adjacent sibling selector of h3 + p selects any
 <p> paragraph element that immediately follows a <h3> heading element where both
 have the same parent.
-1. Create an HTML document containing a heading, two paragraphs, a list, and
-including two spanned phrases:
-<body>
-	<h3>Heading : Child</h3>
-	<p>Paragraph : Child</p>
-	<p>Paragraph : Child
-	<span>Span : Grandchild</span></p>
-	<ul>
-		<li>List Item : Grandchild</li>
-		<li>List Item : Grandchild
-		<span>Span : Great Grandchild</span></li>
-	</ul>
-</body>
-TOPIC2relationship.html
-2. Create a linked style sheet with a style rule to select the first sibling
-immediately following the heading:
-h3 + p {background: yellow}
-TOPIC2relationship.css
-3. Next add a style rule to select the span child of the paragraph element:
-p > span {background: lime}
-4. Now add style rules to select in turn each descendant element in the list by
-describing its hierarchy:
-body > ul {background: fuchsia}
-body > ul > li {background: aqua}
-body > ul > li > span {background: orange}
-5. Save the style sheet alongside the HTML document then open the web page in a
-browser to see the elements styled by sibling and child selectors.
-The text in this example describes each element's relationship to the <body>
-element.
 
-	Selecting by Attribute
+Refer to:
+relationship.html
+&
+relationship.css
+
+6.	Selecting by Attribute
 Style rules can select HTML elements for styling by matching an attribute that
 the element contains. The selector in this case specifies the attribute name
 within square brackets. For example, a selector of *[src] would select all
@@ -412,47 +289,13 @@ attributes – irrespective of their assigned values.
 More specific selection is possible by stating an assigned value to match in the
 selector. For example, a selector of *[lang = "en"] would select all elements
 containing a lang attribute that have an assigned value of "en".
-1. Create an HTML document with five anchor elements:
-<div>
-	<a id="top">Anchor</a>
-</div><hr>
 
-<div>
-	<a href="http://www.google.com">Web Hyperlink</a>
-</div><hr>
+Refer to:
+attribute.html
+&
+attribute.css
 
-<div>
-	<a href="http://www.google.com" title="Google">
-              Web Hyperlink + Title</a>
-</div><hr>
-
-<div>
-	<a href="#top" title="Top of the Page" >
-                        Page Hyperlink</a>
-</div><hr>
-
-<div>
-	<a id="bottom">Anchor</a>
-</div>
-TOPIC2attribute.html
-2. Create a linked style sheet with a style rule to paint the background of all
-anchors containing an id attribute:
-a[id] {background: orange}
-TOPIC2attribute.css
-3. Add a style rule text to color the text in all hyperlinks containing an href
-attribute:
-a[href] {color: red}
-4. Next add a style rule to paint the background of all hyperlinks containing
-both an href attribute and a title attribute:
-a[href][title] {background: yellow}
-5. Now add a style rule to draw a border around all hyperlinks that have an href
-attribute assigned a #top value:
-a[href="#top"] {border: 0.2em solid blue}
-6. Save the style sheet alongside the HTML document then open the web page in a
-browser to see styles applied to elements selected by their attributes.
-The * "wild card" universal selector selects all elements that match.
-
-	Selecting Partial Attributes
+7.	Selecting Partial Attributes
 Style rules can select HTML elements for styling by matching partial attribute
 values. This allows the selector to target an element based upon the presence of
 any single word in an attribute containing a space-separated list of words.
@@ -469,46 +312,13 @@ of images.
 The syntax to match the beginning of a value assigned to an HTML attribute adds a
 | pipe character to the selector, such as *[lang |= "es"] – to match all elements
 that have a lang attribute assigned a value beginning with "es".
-1. Create an HTML document containing an ordered list in which all elements have
-a class attribute:
-<ol>
-<li class="reptile">Alligator</li>
-<li class="animal">Race Horse</li>
-<li class="animal">Domestic Cat</li>
-<li class="fish">Barracuda</li>
-<li class="toy animal">Teddy Bear</li>
-</ol>
-TOPIC2partial.html
-2. Add an unordered list in which all elements have a lang attribute:
-<ul>
-<li lang="en-us">Hello America</li>
-<li lang="es">Hola España</li>
-<li lang="es-mx">Hola México</li>
-</ul>
-3. Add a paragraph containing two sets of images:
-<p>
-<img src="ring-1.png" alt="Ring Image">
-<img src="box-1.png" alt="Box Image">
-<img src="ring-2.png" alt="Ring Image">
-<img src="box-2.png" alt="Box Image">
-<img src="ring-3.png" alt="Ring Image">
-<img src="box-3.png" alt="Box Image">
-</p>
-4. Save the HTML file, then create a style sheet with a rule to select elements
-in the ordered list according to the value assigned to their class attributes:
-*[class ~= "animal"] {background: lime}
-TOPIC2partial.css
-5. Now add a rule to select elements in the unordered list according to the
-beginning of the value assigned to their lang attributes:
-*[lang |= "es"] {color: red; background: yellow}
-6. Next add rules to select img elements according to the beginning of the value
-assigned to their src attributes:
-*[src |= "ring"] {background: fuchsia}
-*[src |= "box"] {background: aqua}
-7. Save the style sheet alongside the HTML document then open the web page in a
-browser to see styles applied by selecting partial attribute values.
 
-	Evaluating Importance
+Refer to:
+partial.html
+&
+partial.css
+
+8.	Evaluating Importance
 After the cascade considers the origin of style rules, as described on page 11,
 the browser then evaluates their "weight" to determine which rules have most
 weight and should, therefore, be applied.
@@ -543,30 +353,13 @@ In comparing specificity values the registers are examined individually, reading
 from left to right, until a difference is found. The style rule with the highest
 value in that register is then applied, For example, in comparing specificity
 values of 0,1,0,0 and 0,0,0,1 a difference occurs in the second register.
-1. Create an HTML document containing three headings:
-<h2>Element style</h2>
-<h2 id="heading-2">Identity style</h2>
-<h2 class="headers">Class style</h2>
-TOPIC2importance.html
-2. Next create a linked style sheet containing rules that both target the heading elements' color property:
-h2 {color: yellow !important}
-h2 {color: black}
-TOPIC2importance.css
-3. Now add rules that each target the heading elements' background property in
-different ways:
-h2 {background: aqua}               /* 0,0,0,1 */
-body h2 {background: blue}          /* 0,0,0,2 */
 
-#heading-2 {background: maroon}     /* 0,1,0,0 */
-h2#heading-2 {background: red}      /* 0,1,0,1 */
+Refer to:
+importance.html
+&
+importance.css
 
-h2.headers {background: olive}      /* 0,0,1,1 */
-body h2.headers {background: green} /* 0,0,1,2 */
-4. Save the style sheet alongside the HTML document then open the web page in a
-browser to see the elements styled after considering origin, weight, and
-specificity.
-
-	Chapter 2 Summary
+9.	Summary
 • A type selector selects all elements of the specified type and multiple elements
 can be specified as a comma-separated list.
 • The * universal selector can be used to select all elements.
