@@ -1,10 +1,33 @@
-﻿<!DOCTYPE html>
+﻿<!--
+1. Start with the HTML5 document type declaration.
+2. Add a root element containing head and body sections, with a link element
+pointing to a style sheet.
+3. Within the body section, insert a table element that includes an identity for
+styling purposes.
+4. Within the table element, first insert a table caption title.
+5. Next, within the table element, insert elements grouping columns – with
+specified class names for styling each group.
+6. Now, within the table element, insert a table header and a table footer – each
+spanning seven columns.
+7. Finally, in the table element, insert a table body containing seven columns,
+with one cell given an identity for styling.
+Refer to:
+colgroup.css
+8. Create a style sheet to color the column groups, remove cell spacing, and
+highlight the header, footer, and one cell.
+9. Save the HTML document and style sheet, then open the web page in your browser
+to see how the column groups are clearly distinct from each other.
+The table body in this example omits the optional </td> and </tr> closing tags to
+save page space, but including the </tr> tags more clearly denotes each row end.
+-->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>Column Grouping</title>
-    <link type="text/css" rel="stylesheet" href="TOPIC3colgroup.css"
-          media="screen" />
+    <link type="text/css" rel="stylesheet"
+          href="colgroup.css" media="screen" />
 </head>
 <body>
     <table id="feb">

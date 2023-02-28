@@ -1,3 +1,8 @@
+// Refer back to:
+// protocol.html
+// &
+// protocol.css
+
 function toggle()
 {
     var tag = document.getElementById("chart");

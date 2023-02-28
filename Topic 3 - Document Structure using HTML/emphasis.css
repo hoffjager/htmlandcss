@@ -1,4 +1,9 @@
-﻿*[class ~= "warning"] {
+﻿/*
+Refer back to:
+    emphasis.html
+*/
+
+*[class ~= "warning"] {
     color: red
 }
 
