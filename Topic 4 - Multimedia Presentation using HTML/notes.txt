@@ -1,0 +1,16 @@
+Chapter 7: Embedding Media Content
+
+	Referencing Figures
+With the latest HTML5 specifications, the web page author now has
+additional means by which to insert images into a web page. An <img> tag
+can be nested within a <figure> </figure> element to embed an image that
+is related to the main text content, but whose removal would not disrupt
+the text's meaning.
+As the nested image, in effect, is now self-contained as a "figure", it
+can be positioned away from the text if desired, and referenced by a
+caption within a nested <figcaption> </figcaption> element:
+
+Refer to:
+figure.html
+
+
