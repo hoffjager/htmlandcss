@@ -1422,3 +1422,40 @@ A: Address
 Q13: Output Process v: Which input type is used for entering multiple types of
 text?
 A: Textarea
+
+Post-Assessment
+Q1: What is an hr tag used for?
+A: Separating sections of a page
+
+Q2: Which is true of the section tag?
+A: It is helpful on long pages; it is used to mark off sections of a webpage
+
+Q3: True or False: Text or images inside a details tag can be hidden or shown at will.
+A: False x => A: True v
+
+Q4: Which tag can be used with the figure tag to add a caption to an image?
+A: Caption tag x => A: Figcaption tag v
+E: The figure tag can be used with the figcaption tab to put a caption on an image and
+line the caption up with the image.
+
+Q5: Which attribute would make the comments textarea larger?
+A: Lines x => A: Rows v
+E: The addition of the rows and columns attributes would make the comments
+textarea larger.
+
+Q6: Which are the two steps in the process of adding an output tag to a form?
+A: Declare a variable; instruct form regarding input data
+
+Test
+Q7: A fieldset defines a: group x => box v: around a set of fields.
+A legend defines a box x => name v: for a fieldset.
+Q23: Which is the caption tag used to add captions to?
+A: Images x => Tables
+Q30: Which are three attributes of the input tag?
+A: Text v, Button v, Label x => Submit v
+Q31: What elements need to be added to the option tags to make the
+selection functional?
+A: IDs x => Values
+Q34: The article tag is used to mark off self-containing text that can
+make up which of the following?
+A: An article v, a story v, a side note x => a blog entry v
