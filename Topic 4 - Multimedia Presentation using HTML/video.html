@@ -17,10 +17,12 @@ the second subtitle at the end of playback.
     <title>Video Example</title>
 </head>
 <body>
-    <video controls>
-        <source src="video.ogv" type="video/ogg" />
-        <source src="video.mp4" type="video/mp4" />
-        <source src="video.vtt" default />
+    <video controls="controls" width="480" height="480">
+        <source src="movie.mp4" type="video/mp4" />
+        [Fallback]
+    </video>
+    <video controls="controls" width="480" height="480">
+        <source src="movie2.mp4" type="video/mp4" />
         [Fallback]
     </video>
 </body>

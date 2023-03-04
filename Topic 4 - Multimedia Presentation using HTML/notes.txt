@@ -311,3 +311,22 @@ A <video> element can contain a nested <track> element to specify a
 subtitle file in the WebVTT format.
 The <progress> element can be used to provide a visual indicator of
 media playback.
+
+Test 1:
+Q1: A free, open container format maintained by the Xiph.org
+	Foundation. Unrestricted by software patents [Ogg (.ogg)]
+	A royalty-free video format. Reasonably small file size. It has a
+	sister project WebP for images [WebM (.webm)]
+Q11: Which portions in the tag affect vector aspects when changed?
+	A: X & Y x => Height, Width v
+
+Test 2:
+Q3: <nav></nav> x => <header></header>
+Q4: <summary><details></details></summary> x => <details><summary></summary></details>
+Q7: <a href="#C19"></a> <h2 id="#C19"></h2> x => <a href="#C19"></a> <h2 id="C19"></h2>
+Q9: <input tabindex="1" accesskey="n" /> <input tabindex="2" accesskey="m" /> x => <input tabindex="1" accesskey="n" /> <input tabindex="2" accesskey="m" />
+Q11: <optgroup><option value="g"></option value></optgroup> x => <optgroup><option value="g"></option></optgroup>
+Q21: <table style="width:100%"><tr><td colspan="2"></td></tr></table> x => <table border="2"><tr><td colspan="2"></td></tr></table>
+Q29: No alert messages will be displayed due to a syntax error x => An alert message is displayed: This browser supports JavaScript
+Q36: POST x => GET
+Q40: True or False: SVG graphics do not lose any quality if they are zoomed or resized: False x => True v
